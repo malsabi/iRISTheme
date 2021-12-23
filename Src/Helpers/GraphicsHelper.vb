@@ -1,12 +1,23 @@
-﻿Imports System.Drawing.Drawing2D
-Imports System.Drawing.Text
-Imports iRISTheme.Src.Utilities
+﻿Imports iRISTheme.Src.Utilities
 
 Namespace Src.Helpers
     ''' <summary>
     ''' GraphicsHelper provides extra methods for supporting graphics.
     ''' </summary>
     Public Class GraphicsHelper
+        ''' <summary>
+        ''' Represents a positioner adujustment for horiztonal and vertical.
+        ''' </summary>
+        ''' <param name="Horizontal">Represents the horizontal alignment.</param>
+        ''' <param name="Vertical">Represents the Vertical alignment.</param>
+        ''' <returns></returns>
+        Public Shared Function SetPosition(Optional Horizontal As StringAlignment = StringAlignment.Center, Optional Vertical As StringAlignment = StringAlignment.Center) As StringFormat
+            Return New StringFormat With
+            {
+                .Alignment = Horizontal,
+                .LineAlignment = Vertical
+            }
+        End Function
         ''' <summary>
         ''' Returns a StringFormat object that contains horizontal and vertical alignments depending on the provided text alignment.
         ''' </summary>
@@ -15,23 +26,23 @@ Namespace Src.Helpers
         Public Shared Function GetTextPosition(TextAlignment As ContentAlignment) As StringFormat
             Select Case TextAlignment
                 Case ContentAlignment.TopLeft
-                    Return GraphicsUtilities.SetPosition(StringAlignment.Near, StringAlignment.Near)
+                    Return SetPosition(StringAlignment.Near, StringAlignment.Near)
                 Case ContentAlignment.TopCenter
-                    Return GraphicsUtilities.SetPosition(StringAlignment.Center, StringAlignment.Near)
+                    Return SetPosition(StringAlignment.Center, StringAlignment.Near)
                 Case ContentAlignment.TopRight
-                    Return GraphicsUtilities.SetPosition(StringAlignment.Far, StringAlignment.Near)
+                    Return SetPosition(StringAlignment.Far, StringAlignment.Near)
                 Case ContentAlignment.MiddleLeft
-                    Return GraphicsUtilities.SetPosition(StringAlignment.Near, StringAlignment.Center)
+                    Return SetPosition(StringAlignment.Near, StringAlignment.Center)
                 Case ContentAlignment.MiddleCenter
-                    Return GraphicsUtilities.SetPosition(StringAlignment.Center, StringAlignment.Center)
+                    Return SetPosition(StringAlignment.Center, StringAlignment.Center)
                 Case ContentAlignment.MiddleRight
-                    Return GraphicsUtilities.SetPosition(StringAlignment.Far, StringAlignment.Center)
+                    Return SetPosition(StringAlignment.Far, StringAlignment.Center)
                 Case ContentAlignment.BottomLeft
-                    Return GraphicsUtilities.SetPosition(StringAlignment.Near, StringAlignment.Far)
+                    Return SetPosition(StringAlignment.Near, StringAlignment.Far)
                 Case ContentAlignment.BottomCenter
-                    Return GraphicsUtilities.SetPosition(StringAlignment.Center, StringAlignment.Far)
+                    Return SetPosition(StringAlignment.Center, StringAlignment.Far)
                 Case ContentAlignment.BottomRight
-                    Return GraphicsUtilities.SetPosition(StringAlignment.Far, StringAlignment.Far)
+                    Return SetPosition(StringAlignment.Far, StringAlignment.Far)
                 Case Else
                     Return Nothing
             End Select

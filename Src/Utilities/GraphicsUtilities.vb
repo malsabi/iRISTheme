@@ -61,19 +61,6 @@ Namespace Src.Utilities
             End Try
         End Sub
         ''' <summary>
-        ''' Represents a positioner adujustment for horiztonal and vertical.
-        ''' </summary>
-        ''' <param name="Horizontal">Represents the horizontal alignment.</param>
-        ''' <param name="Vertical">Represents the Vertical alignment.</param>
-        ''' <returns></returns>
-        Public Shared Function SetPosition(Optional Horizontal As StringAlignment = StringAlignment.Center, Optional Vertical As StringAlignment = StringAlignment.Center) As StringFormat
-            Return New StringFormat With
-            {
-                .Alignment = Horizontal,
-                .LineAlignment = Vertical
-            }
-        End Function
-        ''' <summary>
         ''' Converts a base64 encoded image to an actual image object.
         ''' </summary>
         ''' <param name="Base64Image">Represents the base 64 encoded image.</param>

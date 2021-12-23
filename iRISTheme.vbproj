@@ -109,12 +109,22 @@
     <Compile Include="Src\Components\Actions\IRISButtonActionList.vb" />
     <Compile Include="Src\Components\Actions\IRISThemeManagerActionList.vb" />
     <Compile Include="Src\Components\Designers\IRISButtonDesigner.vb" />
+    <Compile Include="Src\Components\Designers\IRISContextMenuStripDesigner.vb" />
     <Compile Include="Src\Components\Editor\FileNamesEditor.vb" />
     <Compile Include="Src\Components\Designers\IRISThemeManagerDesigner.vb" />
     <Compile Include="Src\Controls\IRISButton.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Src\Controls\IRISCheckBox.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Src\Controls\IRISContextMenuStrip.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Src\Controls\IRISInputBox.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Src\Controls\IRISInputBoxContextMenuStrip.vb">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Src\Enums\AnimationDirection.vb" />
@@ -125,6 +135,7 @@
     <Compile Include="Src\Extensions\GraphicsExtension.vb" />
     <Compile Include="Src\Globals\Config.vb" />
     <Compile Include="Src\Interfaces\IRISButtonTheme.vb" />
+    <Compile Include="Src\Renders\IRISToolStripRender.vb" />
     <Compile Include="Src\Styles\Custom\CustomButtonStyle.vb" />
     <Compile Include="Src\Styles\Custom\CustomStyle.vb" />
     <Compile Include="Src\Styles\Dark\DarkButtonStyle.vb" />
@@ -136,6 +147,7 @@
     </Compile>
     <Compile Include="Src\Helpers\GraphicsHelper.vb" />
     <Compile Include="Src\Interfaces\IRISControl.vb" />
+    <Compile Include="Src\Utilities\FontUtilities.vb" />
     <Compile Include="Src\Utilities\GraphicsUtilities.vb" />
     <Compile Include="Testing\App.Designer.vb">
       <DependentUpon>App.vb</DependentUpon>
@@ -179,6 +191,8 @@
   <ItemGroup>
     <EmbeddedResource Include="Src\Images\ButtonBitmap.bmp" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Src\Images\ContextMenuStrip.bmp" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

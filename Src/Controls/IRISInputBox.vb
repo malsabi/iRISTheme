@@ -38,7 +38,6 @@ Namespace Src.Controls
         Private HoverAnimationManager As AnimationManager
         Private WithEvents InnerTextBox As New BaseInputBox()
 #End Region
-
 #Region "Properties"
         <Browsable(False)>
         <EditorBrowsable(EditorBrowsableState.Never)>
@@ -77,8 +76,6 @@ Namespace Src.Controls
             End Set
         End Property
         <Category("IRIS Theme"), Description("Gets or sets if the InputBox is enabled or disabled.")>
-        <RefreshProperties(RefreshProperties.All)>
-        <DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
         Public Property IsEnabled As Boolean
             Get
                 Return _IsEnabled
@@ -87,6 +84,16 @@ Namespace Src.Controls
                 _IsEnabled = value
                 InnerTextBox.Enabled = value
                 Invalidate()
+            End Set
+        End Property
+        <Category("IRIS Theme"), Description("Sets or gets the IRISContextMenuStrip for the InputBox.")>
+        Public Overrides Property ContextMenuStrip As ContextMenuStrip
+            Get
+                Return MyBase.ContextMenuStrip
+            End Get
+            Set(value As ContextMenuStrip)
+                MyBase.ContextMenuStrip = value
+                InnerTextBox.ContextMenuStrip = value
             End Set
         End Property
         <Category("IRIS Theme"), Description("Gets or sets a value indicating whether the text in InputBox control should appear as the default password character.")>
@@ -110,8 +117,6 @@ Namespace Src.Controls
             End Set
         End Property
         <Category("IRIS Theme"), Description("Gets or sets the font of the InputBox.")>
-        <RefreshProperties(RefreshProperties.All)>
-        <DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
         Public Overrides Property Font As Font
             Get
                 Return MyBase.Font
@@ -124,8 +129,6 @@ Namespace Src.Controls
             End Set
         End Property
         <Category("IRIS Theme"), Description("Gets or sets the text of the InputBox.")>
-        <RefreshProperties(RefreshProperties.All)>
-        <DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
         Public Overrides Property Text As String
             Get
                 Return InnerTextBox.Text
@@ -136,8 +139,6 @@ Namespace Src.Controls
             End Set
         End Property
         <Category("IRIS Theme"), Description("Gets or sets the text-alignment of the InputBox.")>
-        <RefreshProperties(RefreshProperties.All)>
-        <DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
         Public Property TextAlign As HorizontalAlignment
             Get
                 Return InnerTextBox.TextAlign
@@ -148,8 +149,6 @@ Namespace Src.Controls
             End Set
         End Property
         <Category("IRIS Theme"), Description("Gets or sets the text color of the InputBox.")>
-        <RefreshProperties(RefreshProperties.All)>
-        <DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
         Public Property TextColor As Color
             Get
                 Return _TextColor
@@ -160,9 +159,18 @@ Namespace Src.Controls
                 Invalidate()
             End Set
         End Property
+        <Category("IRIS Theme"), Description("Gets or sets the text color of the InputBox.")>
+        Public Property SelectedText As String
+            Get
+                Return InnerTextBox.SelectedText
+            End Get
+            Set(value As String)
+                InnerTextBox.SelectedText = value
+                Invalidate()
+            End Set
+        End Property
+
         <Category("IRIS Theme"), Description("Gets or sets the place holder of the InputBox.")>
-        <RefreshProperties(RefreshProperties.All)>
-        <DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
         Public Property PlaceHolderText As String
             Get
                 Return InnerTextBox.PlaceHolderText
@@ -173,8 +181,6 @@ Namespace Src.Controls
             End Set
         End Property
         <Category("IRIS Theme"), Description("Gets or sets the place holder color of the InputBox.")>
-        <RefreshProperties(RefreshProperties.All)>
-        <DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
         Public Property PlaceHolderTextColor As Color
             Get
                 Return InnerTextBox.PlaceHolderTextColor
@@ -185,8 +191,6 @@ Namespace Src.Controls
             End Set
         End Property
         <Category("IRIS Theme"), Description("Gets or sets the border radius of the InputBox.")>
-        <RefreshProperties(RefreshProperties.All)>
-        <DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
         Public Property BorderRadius As Integer
             Get
                 Return _BorderRadius
@@ -197,8 +201,6 @@ Namespace Src.Controls
             End Set
         End Property
         <Category("IRIS Theme"), Description("Gets or sets the border color of the InputBox.")>
-        <RefreshProperties(RefreshProperties.All)>
-        <DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
         Public Property DefaultBorderColor As Color
             Get
                 Return _DefaultBorderColor
@@ -209,8 +211,6 @@ Namespace Src.Controls
             End Set
         End Property
         <Category("IRIS Theme"), Description("Gets or sets the border width of the InputBox.")>
-        <RefreshProperties(RefreshProperties.All)>
-        <DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
         Public Property DefaultBorderWidth As Single
             Get
                 Return _DefaultBorderWidth
@@ -221,8 +221,6 @@ Namespace Src.Controls
             End Set
         End Property
         <Category("IRIS Theme"), Description("Gets or sets the focused border color of the InputBox.")>
-        <RefreshProperties(RefreshProperties.All)>
-        <DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
         Public Property FocusedBorderColor As Color
             Get
                 Return _FocusedBorderColor
@@ -233,8 +231,6 @@ Namespace Src.Controls
             End Set
         End Property
         <Category("IRIS Theme"), Description("Gets or sets the focused border width of the InputBox.")>
-        <RefreshProperties(RefreshProperties.All)>
-        <DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
         Public Property FocusedBorderWidth As Integer
             Get
                 Return _FocusedBorderWidth
@@ -245,8 +241,6 @@ Namespace Src.Controls
             End Set
         End Property
         <Category("IRIS Theme"), Description("Gets or sets the underlined style of the InputBox.")>
-        <RefreshProperties(RefreshProperties.All)>
-        <DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
         Public Property UnderlinedStyle As Boolean
             Get
                 Return _UnderlinedStyle
@@ -257,8 +251,6 @@ Namespace Src.Controls
             End Set
         End Property
         <Category("IRIS Theme"), Description("Gets or sets the background color of the InputBox.")>
-        <RefreshProperties(RefreshProperties.All)>
-        <DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
         Public Property DefaultBackgroundColor As Color
             Get
                 Return _DefaultBackgroundColor
@@ -270,8 +262,6 @@ Namespace Src.Controls
             End Set
         End Property
         <Category("IRIS Theme"), Description("Gets or sets the hover color of the InputBox.")>
-        <RefreshProperties(RefreshProperties.All)>
-        <DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
         Public Property HoverBackgroundColor As Color
             Get
                 Return _HoverBackgroundColor
@@ -285,8 +275,6 @@ Namespace Src.Controls
             End Set
         End Property
         <Category("IRIS Theme"), Description("Gets or sets the hover text color of the InputBox.")>
-        <RefreshProperties(RefreshProperties.All)>
-        <DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
         Public Property HoverTextColor As Color
             Get
                 Return _HoverTextColor
@@ -300,8 +288,6 @@ Namespace Src.Controls
             End Set
         End Property
         <Category("IRIS Theme"), Description("Gets or sets the hover border color of the InputBox.")>
-        <RefreshProperties(RefreshProperties.All)>
-        <DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
         Public Property HoverBorderColor As Color
             Get
                 Return _HoverBorderColor
@@ -312,8 +298,6 @@ Namespace Src.Controls
             End Set
         End Property
         <Category("IRIS Theme"), Description("Gets or sets the hover border width of the InputBox.")>
-        <RefreshProperties(RefreshProperties.All)>
-        <DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
         Public Property HoverBorderWidth As Integer
             Get
                 Return _HoverBorderWidth
@@ -324,8 +308,6 @@ Namespace Src.Controls
             End Set
         End Property
         <Category("IRIS Theme"), Description("Gets or sets the focused color of the InputBox.")>
-        <RefreshProperties(RefreshProperties.All)>
-        <DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
         Public Property FocusedBackgroundColor As Color
             Get
                 Return _FocusedBackgroundColor
@@ -336,8 +318,6 @@ Namespace Src.Controls
             End Set
         End Property
         <Category("IRIS Theme"), Description("Gets or sets the focused text color of the InputBox.")>
-        <RefreshProperties(RefreshProperties.All)>
-        <DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
         Public Property FocusedTextColor As Color
             Get
                 Return _FocusedTextColor
@@ -348,8 +328,6 @@ Namespace Src.Controls
             End Set
         End Property
         <Category("IRIS Theme"), Description("Gets or sets the disabled background color of the InputBox.")>
-        <RefreshProperties(RefreshProperties.All)>
-        <DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
         Public Property DisabledBackgroundColor As Color
             Get
                 Return _DisabledBackgroundColor
@@ -363,8 +341,6 @@ Namespace Src.Controls
             End Set
         End Property
         <Category("IRIS Theme"), Description("Gets or sets the disabled text color of the InputBox.")>
-        <RefreshProperties(RefreshProperties.All)>
-        <DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
         Public Property DisabledTextColor As Color
             Get
                 Return _DisabledTextColor
@@ -378,8 +354,6 @@ Namespace Src.Controls
             End Set
         End Property
         <Category("IRIS Theme"), Description("Gets or sets the disabled border color of the InputBox.")>
-        <RefreshProperties(RefreshProperties.All)>
-        <DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
         Public Property DisabledBorderColor As Color
             Get
                 Return _DisabledBorderColor
@@ -390,8 +364,6 @@ Namespace Src.Controls
             End Set
         End Property
         <Category("IRIS Theme"), Description("Gets or sets the disabled border width of the InputBox.")>
-        <RefreshProperties(RefreshProperties.All)>
-        <DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
         Public Property DisabledBorderWidth As Integer
             Get
                 Return _DisabledBorderWidth
@@ -402,8 +374,6 @@ Namespace Src.Controls
             End Set
         End Property
         <Category("IRIS Theme"), Description("Gets or sets the animation manager to show or to hide.")>
-        <RefreshProperties(RefreshProperties.All)>
-        <DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
         Public Property EnableAnimations As Boolean
             Get
                 Return _EnableAnimations
@@ -414,8 +384,6 @@ Namespace Src.Controls
             End Set
         End Property
         <Category("IRIS Theme"), Description("Gets or sets the multi line of the InputBox.")>
-        <RefreshProperties(RefreshProperties.All)>
-        <DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
         Public Property MultiLine As Boolean
             Get
                 Return InnerTextBox.Multiline
@@ -427,7 +395,6 @@ Namespace Src.Controls
             End Set
         End Property
 #End Region
-
 #Region "Events & Handlers"
         Public Delegate Sub InputTextChangedDelegate(Sender As Object)
         Public Event InputTextChanged As InputTextChangedDelegate
@@ -446,7 +413,6 @@ Namespace Src.Controls
             Invalidate()
         End Sub
 #End Region
-
 #Region "Constructors"
         Public Sub New()
             SetStyle(ControlStyles.AllPaintingInWmPaint Or ControlStyles.ResizeRedraw Or ControlStyles.UserPaint Or ControlStyles.OptimizedDoubleBuffer, True)
@@ -460,6 +426,8 @@ Namespace Src.Controls
 #Region "Initialization"
         Private Sub Initialize()
             IsEnabled = True
+            Font = FontUtilities.SemiBold(12)
+            Name = "IRISInputBox"
             TextAlign = HorizontalAlignment.Left
             TextColor = New DarkButtonStyle().OnNormalColor
             BorderRadius = 30
@@ -624,6 +592,29 @@ Namespace Src.Controls
 #End Region
 #Region "PlaceHolder Handlers"
 #End Region
+#End Region
+#Region "Public Methods"
+        Public Sub Undo()
+            InnerTextBox.Undo()
+        End Sub
+        Public Sub Cut()
+            InnerTextBox.Cut()
+        End Sub
+        Public Sub Copy()
+            InnerTextBox.Copy()
+        End Sub
+        Public Sub Paste()
+            InnerTextBox.Paste()
+        End Sub
+        Public Sub Delete()
+            InnerTextBox.SelectedText = String.Empty
+        End Sub
+        Public Sub SelectAll()
+            InnerTextBox.SelectAll()
+        End Sub
+        Public Function CanUndo() As Boolean
+            Return InnerTextBox.CanUndo
+        End Function
 #End Region
 #Region "Overrided Methods"
         Protected Overrides Sub OnCreateControl()

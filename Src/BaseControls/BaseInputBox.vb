@@ -1,6 +1,6 @@
 ﻿Imports System.ComponentModel
-
 Namespace Src.BaseControls
+    <Browsable(False)>
     Partial Friend Class BaseInputBox : Inherits TextBox
 #Region "Fields"
         Private _IsPlaceHolder As Boolean
@@ -10,7 +10,6 @@ Namespace Src.BaseControls
         Private _UseSystemPasswordChar As Boolean
         Private _FakeCall As Boolean
 #End Region
-
 #Region "Properties"
         <Description("Gets if the place holder text is placed in the InputBox.")>
         <Category("IRIS Theme")>
@@ -114,19 +113,23 @@ Namespace Src.BaseControls
             End Set
         End Property
 #End Region
-
 #Region "Constructors"
         Public Sub New()
             Initialize()
         End Sub
 #End Region
-
+#Region "Public Methods"
+        Public Sub Delete()
+            SelectedText = String.Empty
+        End Sub
+#End Region
 #Region "Private Methods"
 #Region "Initialization"
         Private Sub Initialize()
             SetStyle(ControlStyles.UserMouse, True)
             DoubleBuffered = True
             UpdateStyles()
+            Name = "BaseInputBox"
             IsPlaceHolder = True
             PlaceHolderText = "Enter Text"
             PlaceHolderTextColor = SystemColors.InactiveCaption
@@ -147,7 +150,6 @@ Namespace Src.BaseControls
         End Sub
 #End Region
 #End Region
-
 #Region "Overrided Methods"
         Protected Overrides Sub WndProc(ByRef m As Message)
             If Not IsPlaceHolder OrElse m.Msg <> 177 Then

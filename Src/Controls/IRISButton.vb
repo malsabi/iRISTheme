@@ -343,6 +343,7 @@ Namespace Src.Controls
             SetStyle(ControlStyles.AllPaintingInWmPaint Or ControlStyles.ResizeRedraw Or ControlStyles.UserPaint Or ControlStyles.OptimizedDoubleBuffer Or ControlStyles.SupportsTransparentBackColor, True)
             UpdateStyles()
             IsEnabled = True
+            Font = FontUtilities.SemiBold(10)
             Text = "IRIS Button"
             TextAlign = ContentAlignment.MiddleCenter
             ImageAlign = ContentAlignment.MiddleLeft

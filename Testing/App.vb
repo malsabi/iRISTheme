@@ -1,5 +1,5 @@
 ﻿Public Class App
-    Private Sub IrisButton1_Click(sender As Object, e As EventArgs) Handles IrisButton1.Click
-        MessageBox.Show("Email: " + IrisInputBox1.Text + " Password: " + IrisInputBox2.Text)
+    Private Sub App_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class
