@@ -41,22 +41,6 @@ Namespace Src.Controls
         Private AnimationManager As AnimationManager
         Private HoverAnimationManager As AnimationManager
 #End Region
-#Region "Interface"
-        '<Category("IRIS Theme"), Description("Gets or sets the theme manager that is associated with the button.")>
-        '<RefreshProperties(RefreshProperties.All)>
-        '<DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
-        'Public Property IRISThemeManager As IRISThemeManager Implements IRISControl.IRISThemeManager
-        '    Get
-        '        Return _ThemeManager
-        '    End Get
-        '    Set(value As IRISThemeManager)
-        '        FireChanging()
-        '        _ThemeManager = value
-        '        Invalidate()
-        '        FireChanged()
-        '    End Set
-        'End Property
-#End Region
 #Region "Properties"
         <Browsable(False)>
         <EditorBrowsable(EditorBrowsableState.Never)>

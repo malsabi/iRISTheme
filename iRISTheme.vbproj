@@ -122,10 +122,16 @@
     <Compile Include="Src\Controls\IRISContextMenuStrip.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Src\Controls\IRISHorizontalTabControl.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Src\Controls\IRISInputBox.vb">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Src\Controls\IRISInputBoxContextMenuStrip.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Src\Controls\IRISVerticalTabControl.vb">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Src\Enums\AnimationDirection.vb" />
