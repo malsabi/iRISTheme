@@ -109,6 +109,7 @@
     <Compile Include="Src\Components\Actions\IRISButtonActionList.vb" />
     <Compile Include="Src\Components\Actions\IRISThemeManagerActionList.vb" />
     <Compile Include="Src\Components\Designers\IRISButtonDesigner.vb" />
+    <Compile Include="Src\Components\Designers\IRISCheckBoxDesigner.vb" />
     <Compile Include="Src\Components\Designers\IRISContextMenuStripDesigner.vb" />
     <Compile Include="Src\Components\Editor\FileNamesEditor.vb" />
     <Compile Include="Src\Components\Designers\IRISThemeManagerDesigner.vb" />
@@ -133,7 +134,6 @@
     <Compile Include="Src\Enums\MouseState.vb" />
     <Compile Include="Src\Extensions\ColorExtension.vb" />
     <Compile Include="Src\Extensions\GraphicsExtension.vb" />
-    <Compile Include="Src\Globals\Config.vb" />
     <Compile Include="Src\Interfaces\IRISButtonTheme.vb" />
     <Compile Include="Src\Renders\IRISToolStripRender.vb" />
     <Compile Include="Src\Styles\Custom\CustomButtonStyle.vb" />

@@ -41,7 +41,6 @@ Namespace Src.Controls
         Private AnimationManager As AnimationManager
         Private HoverAnimationManager As AnimationManager
 #End Region
-
 #Region "Interface"
         '<Category("IRIS Theme"), Description("Gets or sets the theme manager that is associated with the button.")>
         '<RefreshProperties(RefreshProperties.All)>
@@ -58,7 +57,6 @@ Namespace Src.Controls
         '    End Set
         'End Property
 #End Region
-
 #Region "Properties"
         <Browsable(False)>
         <EditorBrowsable(EditorBrowsableState.Never)>
@@ -330,13 +328,11 @@ Namespace Src.Controls
             End Set
         End Property
 #End Region
-
 #Region "Constructors"
         Public Sub New()
             Initialize()
         End Sub
 #End Region
-
 #Region "Private Methods"
 #Region "Initialization"
         Private Sub Initialize()
@@ -412,7 +408,6 @@ Namespace Src.Controls
         End Function
 #End Region
 #End Region
-
 #Region "Overrided Methods"
         Protected Overrides Sub OnPaint(e As PaintEventArgs)
             Dim G As Graphics = e.Graphics.ToHighQuality()
