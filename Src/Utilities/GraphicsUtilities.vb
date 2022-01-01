@@ -74,5 +74,6 @@ Namespace Src.Utilities
                 Return Nothing
             End Try
         End Function
+
     End Class
 End Namespace

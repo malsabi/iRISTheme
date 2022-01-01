@@ -1,21 +1,38 @@
-﻿Imports iRISTheme.Src.Utilities
-
-Namespace Src.Helpers
+﻿Namespace Src.Helpers
     ''' <summary>
     ''' GraphicsHelper provides extra methods for supporting graphics.
     ''' </summary>
     Public Class GraphicsHelper
         ''' <summary>
-        ''' Represents a positioner adujustment for horiztonal and vertical.
+        ''' Returns a positioner adujustment for horiztonal and vertical.
         ''' </summary>
         ''' <param name="Horizontal">Represents the horizontal alignment.</param>
         ''' <param name="Vertical">Represents the Vertical alignment.</param>
-        ''' <returns></returns>
         Public Shared Function SetPosition(Optional Horizontal As StringAlignment = StringAlignment.Center, Optional Vertical As StringAlignment = StringAlignment.Center) As StringFormat
             Return New StringFormat With
             {
                 .Alignment = Horizontal,
                 .LineAlignment = Vertical
+            }
+        End Function
+        ''' <summary>
+        ''' Returns a positioner adujustment for vertical.
+        ''' </summary>
+        ''' <param name="Vertical">Represents a vertical alignment.</param>
+        Public Shared Function SetVerticalPosition(Optional Vertical As StringAlignment = StringAlignment.Center) As StringFormat
+            Return New StringFormat With
+            {
+                .LineAlignment = Vertical
+            }
+        End Function
+        ''' <summary>
+        ''' Returns a positioner adjustment for horizontal.
+        ''' </summary>
+        ''' <param name="Horizontal">Represents a horizontal alignment.</param>
+        Public Shared Function SetHoriztonalPosition(Optional Horizontal As StringAlignment = StringAlignment.Center) As StringFormat
+            Return New StringFormat With
+            {
+                .Alignment = Horizontal
             }
         End Function
         ''' <summary>
@@ -77,6 +94,23 @@ Namespace Src.Helpers
             End Select
         End Function
         ''' <summary>
+        '''  Returns the Point(x, y) that stores the text depending on how the text is aligned using StringAlignment.
+        ''' </summary>
+        ''' <param name="TextAlignment">Represents how text is aligned.</param>
+        ''' <param name="ControlSize">Represents the size of the control area.</param>
+        Public Shared Function GetTextAlignmentPoint(TextAlignment As StringAlignment, ControlSize As Size) As Point
+            Select Case TextAlignment
+                Case StringAlignment.Near
+                    Return New Point(0, ControlSize.Height / 2)
+                Case StringAlignment.Center
+                    Return New Point(ControlSize.Width / 2, ControlSize.Height / 2)
+                Case StringAlignment.Far
+                    Return New Point(ControlSize.Width, ControlSize.Height / 2)
+                Case Else
+                    Return New Point(-1, -1)
+            End Select
+        End Function
+        ''' <summary>
         ''' Returns the Point(x, y) that stores the image depending on how the image is aligned using ContentAlignment.
         ''' </summary>
         ''' <param name="ImageAlignment">Represents how image is aligned.</param>
@@ -104,6 +138,26 @@ Namespace Src.Helpers
                     Return New Point((ControlSize.Width / 2) - ImageSize.Width, ControlSize.Height - (ImageSize.Height * 2) - 2)
                 Case ContentAlignment.BottomRight
                     Return New Point(ControlSize.Width - (ImageSize.Width * 2), ControlSize.Height - (ImageSize.Height * 2) - 2)
+                Case Else
+                    Return New Point(-1, -1)
+            End Select
+        End Function
+        ''' <summary>
+        '''  Returns the Point(x, y) that stores the text depending on how the text is aligned using StringAlignment.
+        ''' </summary>
+        ''' <param name="ImageAlignment">Represents how text is aligned.</param>
+        ''' <param name="ControlSize">Represents the size of the control area.</param>
+        ''' <param name="ImageSize">Represents the size of the image dimension.</param>
+        Public Shared Function GetImageAlignmentPoint(ImageAlignment As StringAlignment, ControlSize As Size, ImageSize As Size) As Point
+            ImageSize.Width /= 2
+            ImageSize.Height /= 2
+            Select Case ImageAlignment
+                Case StringAlignment.Near
+                    Return New Point(0, (ControlSize.Height / 2) - ImageSize.Height)
+                Case StringAlignment.Center
+                    Return New Point((ControlSize.Width / 2) - ImageSize.Width, (ControlSize.Height / 2) - ImageSize.Height)
+                Case StringAlignment.Far
+                    Return New Point(ControlSize.Width - (ImageSize.Width * 2), (ControlSize.Height / 2) - ImageSize.Height)
                 Case Else
                     Return New Point(-1, -1)
             End Select

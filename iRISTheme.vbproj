@@ -136,11 +136,13 @@
     </Compile>
     <Compile Include="Src\Enums\AnimationDirection.vb" />
     <Compile Include="Src\Enums\AnimationType.vb" />
+    <Compile Include="Src\Enums\BorderStyle.vb" />
     <Compile Include="Src\Enums\IRISThemeStyle.vb" />
     <Compile Include="Src\Enums\MouseState.vb" />
     <Compile Include="Src\Extensions\ColorExtension.vb" />
     <Compile Include="Src\Extensions\GraphicsExtension.vb" />
     <Compile Include="Src\Interfaces\IRISButtonTheme.vb" />
+    <Compile Include="Src\Native\User32.vb" />
     <Compile Include="Src\Renders\IRISToolStripRender.vb" />
     <Compile Include="Src\Styles\Custom\CustomButtonStyle.vb" />
     <Compile Include="Src\Styles\Custom\CustomStyle.vb" />
@@ -155,6 +157,7 @@
     <Compile Include="Src\Interfaces\IRISControl.vb" />
     <Compile Include="Src\Utilities\FontUtilities.vb" />
     <Compile Include="Src\Utilities\GraphicsUtilities.vb" />
+    <Compile Include="Src\Utilities\User32Utilities.vb" />
     <Compile Include="Testing\App.Designer.vb">
       <DependentUpon>App.vb</DependentUpon>
     </Compile>

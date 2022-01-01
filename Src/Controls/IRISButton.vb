@@ -17,7 +17,6 @@ Namespace Src.Controls
     <DefaultProperty("Text")>
     Public Class IRISButton : Inherits Control : Implements IRISControl
 #Region "Fields"
-        Private _Text As String
         Private _TextAlign As ContentAlignment
         Private _TextColor As Color
         Private _BorderColor As Color
@@ -26,6 +25,7 @@ Namespace Src.Controls
         Private _IsEnabled As Boolean
         Private _Image As Image
         Private _ImageAlign As ContentAlignment
+        Private _StretchImage As Boolean
         Private _ImageOffset As Point
         Private _BackgroundColor As Color
         Private _HoverColor As Color
@@ -37,6 +37,7 @@ Namespace Src.Controls
         Private _DisabledBorderColor As Color
         Private _DisabledBorderWidth As Integer
         Private _EnableAnimations As Boolean
+        Private _TextOffset As Point
         Private MouseCurrentState As MouseState
         Private AnimationManager As AnimationManager
         Private HoverAnimationManager As AnimationManager
@@ -67,8 +68,6 @@ Namespace Src.Controls
             End Set
         End Property
         <Category("IRIS Theme"), Description("Gets or sets if the button is enabled or disabled.")>
-        <RefreshProperties(RefreshProperties.All)>
-        <DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
         Public Property IsEnabled As Boolean
             Get
                 Return _IsEnabled
@@ -79,21 +78,17 @@ Namespace Src.Controls
                 Invalidate()
             End Set
         End Property
-        <Category("IRIS Theme"), Description("Gets or sets the text of the button.")>
-        <RefreshProperties(RefreshProperties.All)>
-        <DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
+        <Category("IRIS Theme"), Description("Gets or sets the text of the IRISButton.")>
         Public Overrides Property Text As String
             Get
-                Return _Text
+                Return MyBase.Text
             End Get
             Set(value As String)
-                _Text = value
+                MyBase.Text = value
                 Invalidate()
             End Set
         End Property
-        <Category("IRIS Theme"), Description("Gets or sets the text-alignment of the button.")>
-        <RefreshProperties(RefreshProperties.All)>
-        <DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
+        <Category("IRIS Theme"), Description("Gets or sets the text-alignment of the IRISButton.")>
         Public Property TextAlign As ContentAlignment
             Get
                 Return _TextAlign
@@ -103,9 +98,7 @@ Namespace Src.Controls
                 Invalidate()
             End Set
         End Property
-        <Category("IRIS Theme"), Description("Gets or sets the text color of the button.")>
-        <RefreshProperties(RefreshProperties.All)>
-        <DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
+        <Category("IRIS Theme"), Description("Gets or sets the text color of the IRISButton.")>
         Public Property TextColor As Color
             Get
                 Return _TextColor
@@ -115,9 +108,7 @@ Namespace Src.Controls
                 Invalidate()
             End Set
         End Property
-        <Category("IRIS Theme"), Description("Gets or sets the border color of the button.")>
-        <RefreshProperties(RefreshProperties.All)>
-        <DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
+        <Category("IRIS Theme"), Description("Gets or sets the border color of the IRISButton.")>
         Public Property BorderColor As Color
             Get
                 Return _BorderColor
@@ -127,9 +118,7 @@ Namespace Src.Controls
                 Invalidate()
             End Set
         End Property
-        <Category("IRIS Theme"), Description("Gets or sets the border radius of the button.")>
-        <RefreshProperties(RefreshProperties.All)>
-        <DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
+        <Category("IRIS Theme"), Description("Gets or sets the border radius of the IRISButton.")>
         Public Property BorderRadius As Integer
             Get
                 Return _BorderRadius
@@ -139,9 +128,7 @@ Namespace Src.Controls
                 Invalidate()
             End Set
         End Property
-        <Category("IRIS Theme"), Description("Gets or sets the border size of the button.")>
-        <RefreshProperties(RefreshProperties.All)>
-        <DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
+        <Category("IRIS Theme"), Description("Gets or sets the border size of the IRISButton.")>
         Public Property BorderWidth As Single
             Get
                 Return _BorderWidth
@@ -151,25 +138,17 @@ Namespace Src.Controls
                 Invalidate()
             End Set
         End Property
-        <Category("IRIS Theme"), Description("Gets or sets the border size of the button.")>
-        <RefreshProperties(RefreshProperties.All)>
-        <DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
+        <Category("IRIS Theme"), Description("Gets or sets the border size of the IRISButton.")>
         Public Property Image As Image
             Get
                 Return _Image
             End Get
             Set(value As Image)
-                If ValidateImage(value) Then
-                    _Image = value
-                    Invalidate()
-                Else
-                    _Image = Nothing
-                End If
+                _Image = value
+                Invalidate()
             End Set
         End Property
-        <Category("IRIS Theme"), Description("Gets or sets the Image Alignment of the button.")>
-        <RefreshProperties(RefreshProperties.All)>
-        <DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
+        <Category("IRIS Theme"), Description("Gets or sets the Image Alignment of the IRISButton.")>
         Public Property ImageAlign As ContentAlignment
             Get
                 Return _ImageAlign
@@ -179,9 +158,17 @@ Namespace Src.Controls
                 Invalidate()
             End Set
         End Property
-        <Category("IRIS Theme"), Description("Gets or sets the Image Offset of the button.")>
-        <RefreshProperties(RefreshProperties.All)>
-        <DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
+        <Category("IRIS Theme"), Description("Gets or sets the Image stretch of the IRISButton.")>
+        Public Property StretchImage As Boolean
+            Get
+                Return _StretchImage
+            End Get
+            Set(value As Boolean)
+                _StretchImage = value
+                Invalidate()
+            End Set
+        End Property
+        <Category("IRIS Theme"), Description("Gets or sets the Image Offset of the IRISButton.")>
         Public Property ImageOffset As Point
             Get
                 Return _ImageOffset
@@ -191,9 +178,7 @@ Namespace Src.Controls
                 Invalidate()
             End Set
         End Property
-        <Category("IRIS Theme"), Description("Gets or sets the background color of the button.")>
-        <RefreshProperties(RefreshProperties.All)>
-        <DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
+        <Category("IRIS Theme"), Description("Gets or sets the background color of the IRISButton.")>
         Public Property BackgroundColor As Color
             Get
                 Return _BackgroundColor
@@ -203,9 +188,7 @@ Namespace Src.Controls
                 Invalidate()
             End Set
         End Property
-        <Category("IRIS Theme"), Description("Gets or sets the hover color of the button.")>
-        <RefreshProperties(RefreshProperties.All)>
-        <DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
+        <Category("IRIS Theme"), Description("Gets or sets the hover color of the IRISButton.")>
         Public Property HoverColor As Color
             Get
                 Return _HoverColor
@@ -215,9 +198,7 @@ Namespace Src.Controls
                 Invalidate()
             End Set
         End Property
-        <Category("IRIS Theme"), Description("Gets or sets the hover text color of the button.")>
-        <RefreshProperties(RefreshProperties.All)>
-        <DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
+        <Category("IRIS Theme"), Description("Gets or sets the hover text color of the IRISButton.")>
         Public Property HoverTextColor As Color
             Get
                 Return _HoverTextColor
@@ -227,9 +208,7 @@ Namespace Src.Controls
                 Invalidate()
             End Set
         End Property
-        <Category("IRIS Theme"), Description("Gets or sets the click color of the button.")>
-        <RefreshProperties(RefreshProperties.All)>
-        <DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
+        <Category("IRIS Theme"), Description("Gets or sets the click color of the IRISButton.")>
         Public Property ClickColor As Color
             Get
                 Return _ClickColor
@@ -239,9 +218,7 @@ Namespace Src.Controls
                 Invalidate()
             End Set
         End Property
-        <Category("IRIS Theme"), Description("Gets or sets the click text color of the button.")>
-        <RefreshProperties(RefreshProperties.All)>
-        <DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
+        <Category("IRIS Theme"), Description("Gets or sets the click text color of the IRISButton.")>
         Public Property ClickTextColor As Color
             Get
                 Return _ClickTextColor
@@ -251,9 +228,7 @@ Namespace Src.Controls
                 Invalidate()
             End Set
         End Property
-        <Category("IRIS Theme"), Description("Gets or sets the disabled background color of the button.")>
-        <RefreshProperties(RefreshProperties.All)>
-        <DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
+        <Category("IRIS Theme"), Description("Gets or sets the disabled background color of the IRISButton.")>
         Public Property DisabledBackgroundColor As Color
             Get
                 Return _DisabledBackgroundColor
@@ -263,9 +238,7 @@ Namespace Src.Controls
                 Invalidate()
             End Set
         End Property
-        <Category("IRIS Theme"), Description("Gets or sets the disabled text color of the button.")>
-        <RefreshProperties(RefreshProperties.All)>
-        <DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
+        <Category("IRIS Theme"), Description("Gets or sets the disabled text color of the IRISButton.")>
         Public Property DisabledTextColor As Color
             Get
                 Return _DisabledTextColor
@@ -275,9 +248,7 @@ Namespace Src.Controls
                 Invalidate()
             End Set
         End Property
-        <Category("IRIS Theme"), Description("Gets or sets the disabled border color of the InputBox.")>
-        <RefreshProperties(RefreshProperties.All)>
-        <DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
+        <Category("IRIS Theme"), Description("Gets or sets the disabled border color of the IRISButton.")>
         Public Property DisabledBorderColor As Color
             Get
                 Return _DisabledBorderColor
@@ -287,9 +258,7 @@ Namespace Src.Controls
                 Invalidate()
             End Set
         End Property
-        <Category("IRIS Theme"), Description("Gets or sets the disabled border width of the button.")>
-        <RefreshProperties(RefreshProperties.All)>
-        <DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
+        <Category("IRIS Theme"), Description("Gets or sets the disabled border width of the IRISButton.")>
         Public Property DisabledBorderWidth As Integer
             Get
                 Return _DisabledBorderWidth
@@ -300,14 +269,22 @@ Namespace Src.Controls
             End Set
         End Property
         <Category("IRIS Theme"), Description("Gets or sets the animation manager to show or to hide.")>
-        <RefreshProperties(RefreshProperties.All)>
-        <DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
         Public Property EnableAnimations As Boolean
             Get
                 Return _EnableAnimations
             End Get
             Set(value As Boolean)
                 _EnableAnimations = value
+                Invalidate()
+            End Set
+        End Property
+        <Category("IRIS Theme"), Description("Gets or sets the text offset of the IRISButton.")>
+        Public Property TextOffset As Point
+            Get
+                Return _TextOffset
+            End Get
+            Set(value As Point)
+                _TextOffset = value
                 Invalidate()
             End Set
         End Property
@@ -324,7 +301,6 @@ Namespace Src.Controls
             UpdateStyles()
             IsEnabled = True
             Font = FontUtilities.SemiBold(10)
-            Text = "IRIS Button"
             TextAlign = ContentAlignment.MiddleCenter
             ImageAlign = ContentAlignment.MiddleLeft
             TextColor = New DarkButtonStyle().OnNormalColor
@@ -339,6 +315,7 @@ Namespace Src.Controls
             DisabledBorderColor = New DarkButtonStyle().DisabledBorderColor
             DisabledBorderWidth = 1
             EnableAnimations = True
+            TextOffset = New Point(0, 0)
             MouseCurrentState = MouseState.Normal
             AnimationManager = New AnimationManager(False) With
             {
@@ -375,22 +352,6 @@ Namespace Src.Controls
             Return Bitmap
         End Function
 #End Region
-#Region "Validations"
-        Private Function ValidateImage(Img As Image) As Boolean
-            Dim SmallSize As New Size(16, 16)
-            Dim LargeSize As New Size(32, 32)
-            If Img IsNot Nothing Then
-                If Img.Size.Width < SmallSize.Width AndAlso Img.Size.Height < SmallSize.Height Then
-                    Throw New Exception("Image should be greater or equal than 16x16 pixel.")
-                ElseIf Img.Size.Width > LargeSize.Width AndAlso Img.Size.Height > LargeSize.Height Then
-                    Throw New Exception("Image should be below or equal than 32x32 pixel.")
-                Else
-                    Return True
-                End If
-            End If
-            Return False
-        End Function
-#End Region
 #End Region
 #Region "Overrided Methods"
         Protected Overrides Sub OnPaint(e As PaintEventArgs)
@@ -425,8 +386,8 @@ Namespace Src.Controls
                             End If
                         End Using
                         'Draws the text with a given text color
-                        Using FontBrush As Brush = New SolidBrush(HoverTextColor)
-                            G.DrawString(Text, Font, FontBrush, ButtonBounds, TextAlignment)
+                        Using FontBrush As SolidBrush = New SolidBrush(HoverTextColor)
+                            G.DrawText(Font, Text, FontBrush, TextAlign, TextOffset, ButtonBounds, Nothing)
                         End Using
                         'Ripple Animation on clicking.
                         If AnimationManager.IsAnimating() Then
@@ -437,8 +398,8 @@ Namespace Src.Controls
                                 HandleClickAnimation(G)
                             End If
                             'Draws the text with a given text color
-                            Using FontBrush As Brush = New SolidBrush(ClickTextColor)
-                                G.DrawString(Text, Font, FontBrush, ButtonBounds, TextAlignment)
+                            Using FontBrush As SolidBrush = New SolidBrush(ClickTextColor)
+                                G.DrawText(Font, Text, FontBrush, TextAlign, TextOffset, ButtonBounds, Nothing)
                             End Using
                         End If
                     Else
@@ -452,7 +413,7 @@ Namespace Src.Controls
                                 End If
                             End Using
                             'Draws the text with a given text color
-                            Using FontBrush As Brush = New SolidBrush(HoverTextColor)
+                            Using FontBrush As SolidBrush = New SolidBrush(HoverTextColor)
                                 G.DrawString(Text, Font, FontBrush, ButtonBounds, TextAlignment)
                             End Using
                         ElseIf MouseCurrentState.Equals(MouseState.Down) Then
@@ -465,20 +426,24 @@ Namespace Src.Controls
                                 End If
                             End Using
                             'Draws the text with a given text color
-                            Using FontBrush As Brush = New SolidBrush(ClickTextColor)
-                                G.DrawString(Text, Font, FontBrush, ButtonBounds, TextAlignment)
+                            Using FontBrush As SolidBrush = New SolidBrush(ClickTextColor)
+                                G.DrawText(Font, Text, FontBrush, TextAlign, TextOffset, ButtonBounds, Nothing)
                             End Using
                         End If
                     End If
                     If MouseCurrentState.Equals(MouseState.Normal) Then
                         'Draws the text with a given text color
-                        Using FontBrush As Brush = New SolidBrush(TextColor)
-                            G.DrawString(Text, Font, FontBrush, ButtonBounds, TextAlignment)
+                        Using FontBrush As SolidBrush = New SolidBrush(TextColor)
+                            G.DrawText(Font, Text, FontBrush, TextAlign, TextOffset, ButtonBounds, Nothing)
                         End Using
                     End If
                     'Draws the image.
                     If Image IsNot Nothing Then
-                        G.DrawImage(Image, ImageAlign, ImageOffset, Size)
+                        If StretchImage Then
+                            G.DrawImage(Image, Rectangle.Round(ButtonGraphicsPath.GetBounds()))
+                        Else
+                            G.DrawImage(Image, Image.Size, ImageAlign, ImageOffset, Rectangle.Round(ButtonGraphicsPath.GetBounds()))
+                        End If
                     End If
                 End Using
             Else
@@ -489,9 +454,17 @@ Namespace Src.Controls
                     End If
                 End Using
                 'Draws the text with a given text color
-                Using FontBrush As Brush = New SolidBrush(DisabledTextColor)
-                    G.DrawString(Text, Font, FontBrush, ButtonBounds, TextAlignment)
+                Using FontBrush As SolidBrush = New SolidBrush(DisabledTextColor)
+                    G.DrawText(Font, Text, FontBrush, TextAlign, TextOffset, ButtonBounds, Nothing)
                 End Using
+                'Draws the image. TODO:: Enable to draw an image with a specific color.
+                If Image IsNot Nothing Then
+                    If StretchImage Then
+                        G.DrawImageWithColor(Rectangle.Round(ButtonGraphicsPath.GetBounds()), Image, DisabledBorderColor)
+                    Else
+                        G.DrawImageWithColor(DisabledBackgroundColor, Image, Image.Size, ImageAlign, ImageOffset, Rectangle.Round(ButtonGraphicsPath.GetBounds()))
+                    End If
+                End If
             End If
             ButtonGraphicsPath.Dispose()
         End Sub

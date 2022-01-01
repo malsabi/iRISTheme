@@ -480,7 +480,7 @@ Namespace Src.Controls
                 .Cursor = Cursors.IBeam
                 .BackColor = DefaultBackgroundColor
                 .ForeColor = TextColor
-                .BorderStyle = BorderStyle.None
+                .BorderStyle = Windows.Forms.BorderStyle.None
                 .Font = Font
                 .UseSystemPasswordChar = UseSystemPasswordChar
                 .PasswordChar = PasswordChar
