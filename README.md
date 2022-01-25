@@ -13,5 +13,7 @@ AVAILABLE CONTROLS:
 AVAILABLE COMPONENTS:
 1. IRISThemeManager
 
-
 Status: Still the project is under development.
+
+RESULT:
+[![i-RISTheme-Buttons.png](https://i.postimg.cc/gjc2m98G/i-RISTheme-Buttons.png)](https://postimg.cc/ftFNfr8P)
