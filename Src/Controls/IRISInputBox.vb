@@ -33,6 +33,12 @@ Namespace Src.Controls
         Private _DisabledBorderColor As Color
         Private _DisabledBorderWidth As Integer
         Private _EnableAnimations As Boolean
+        Private _LeftImage As Image
+        Private _LeftImageSize As Size
+        Private _LeftImageOffset As Point
+        Private _RightImage As Image
+        Private _RightImageSize As Size
+        Private _RightImageOffset As Point
         Private MouseCurrentState As MouseState
         Private AnimationManager As AnimationManager
         Private HoverAnimationManager As AnimationManager
@@ -383,6 +389,72 @@ Namespace Src.Controls
                 Invalidate()
             End Set
         End Property
+        <Category("IRIS Theme"), Description("Gets or sets the left image of the InputBox.")>
+        Public Property LeftImage As Image
+            Get
+                Return _LeftImage
+            End Get
+            Set(value As Image)
+                _LeftImage = value
+                OnResize(Nothing)
+                Invalidate()
+            End Set
+        End Property
+        <Category("IRIS Theme"), Description("Gets or sets the left image size of the InputBox.")>
+        Public Property LeftImageSize As Size
+            Get
+                Return _LeftImageSize
+            End Get
+            Set(value As Size)
+                _LeftImageSize = value
+                OnResize(Nothing)
+                Invalidate()
+            End Set
+        End Property
+        <Category("IRIS Theme"), Description("Gets or sets the left image offset of the InputBox.")>
+        Public Property LeftImageOffset As Point
+            Get
+                Return _LeftImageOffset
+            End Get
+            Set(value As Point)
+                _LeftImageOffset = value
+                OnResize(Nothing)
+                Invalidate()
+            End Set
+        End Property
+        <Category("IRIS Theme"), Description("Gets or sets the right image of the InputBox.")>
+        Public Property RightImage As Image
+            Get
+                Return _RightImage
+            End Get
+            Set(value As Image)
+                _RightImage = value
+                OnResize(Nothing)
+                Invalidate()
+            End Set
+        End Property
+        <Category("IRIS Theme"), Description("Gets or sets the right image size of the InputBox.")>
+        Public Property RightImageSize As Size
+            Get
+                Return _RightImageSize
+            End Get
+            Set(value As Size)
+                _RightImageSize = value
+                OnResize(Nothing)
+                Invalidate()
+            End Set
+        End Property
+        <Category("IRIS Theme"), Description("Gets or sets the right image offset of the InputBox.")>
+        Public Property RightImageOffset As Point
+            Get
+                Return _RightImageOffset
+            End Get
+            Set(value As Point)
+                _RightImageOffset = value
+                OnResize(Nothing)
+                Invalidate()
+            End Set
+        End Property
         <Category("IRIS Theme"), Description("Gets or sets the multi line of the InputBox.")>
         Public Property MultiLine As Boolean
             Get
@@ -398,20 +470,7 @@ Namespace Src.Controls
 #Region "Events & Handlers"
         Public Delegate Sub InputTextChangedDelegate(Sender As Object)
         Public Event InputTextChanged As InputTextChangedDelegate
-        Private Sub InputBoxMouseEnter(sender As Object, e As EventArgs) Handles MyBase.MouseEnter
-            MouseCurrentState = MouseState.Hovered
-            If EnableAnimations AndAlso IsEnabled Then
-                HoverAnimationManager.StartNewAnimation(AnimationDirection.In)
-            End If
-            Invalidate()
-        End Sub
-        Private Sub InputBoxMouseLeave(sender As Object, e As EventArgs) Handles MyBase.MouseLeave
-            MouseCurrentState = MouseState.Normal
-            If EnableAnimations AndAlso IsEnabled Then
-                HoverAnimationManager.StartNewAnimation(AnimationDirection.Out)
-            End If
-            Invalidate()
-        End Sub
+
 #End Region
 #Region "Constructors"
         Public Sub New()
@@ -448,6 +507,12 @@ Namespace Src.Controls
             DisabledBorderColor = New DarkButtonStyle().DisabledBorderColor
             DisabledBorderWidth = 1
             EnableAnimations = True
+            LeftImage = Nothing
+            LeftImageSize = New Size(16, 16)
+            LeftImageOffset = New Point(0, 0)
+            RightImage = Nothing
+            RightImageSize = New Size(16, 16)
+            RightImageOffset = New Point(0, 0)
             MultiLine = False
             UseSystemPasswordChar = False
             PasswordChar = "*"
@@ -538,6 +603,9 @@ Namespace Src.Controls
             MouseCurrentState = MouseState.Down
             Invalidate()
         End Sub
+        Private Sub InnerTextBoxSizeChanged(sender As Object, e As EventArgs) Handles InnerTextBox.SizeChanged
+            OnResize(Nothing)
+        End Sub
 #End Region
 #Region "Animation Handlers"
         Private Sub OnAnimateUpdateClick(Sender As Object)
@@ -585,12 +653,10 @@ Namespace Src.Controls
         Private Sub HandleHoveredUnderlinedStyleAnimation(G As Graphics)
             Using HoveredBorderPen As New Pen(Color.FromArgb(HoverAnimationManager.GetProgress() * HoverBorderColor.A, HoverBorderColor.RemoveAlpha()), HoverBorderWidth)
                 If HoveredBorderPen.Width > 0 Then
-                    G.DrawLine(HoveredBorderPen, New Point(InnerTextBox.Location.X, Height - 1), New Point(Width - Padding.Right, Height - 1))
+                    G.DrawRectangle(HoveredBorderPen, InnerTextBox.Location.X, Height - 1, InnerTextBox.Width, HoveredBorderPen.Width)
                 End If
             End Using
         End Sub
-#End Region
-#Region "PlaceHolder Handlers"
 #End Region
 #End Region
 #Region "Public Methods"
@@ -618,23 +684,35 @@ Namespace Src.Controls
 #End Region
 #Region "Overrided Methods"
         Protected Overrides Sub OnCreateControl()
-            MyBase.OnCreateControl()
             If Not Controls.Contains(InnerTextBox) Then
                 Controls.Add(InnerTextBox)
                 OnResize(Nothing)
             End If
+            MyBase.OnCreateControl()
         End Sub
         Protected Overrides Sub OnResize(e As EventArgs)
             If Not MultiLine Then
                 If InnerTextBox.Dock.Equals(DockStyle.Fill) Then
                     InnerTextBox.Dock = DockStyle.None
                 End If
-                Dim MiddlePointX As Integer = ClientRectangle().Left + Padding.Left
-                Dim MiddlePointY As Integer = (Height / 2) - (InnerTextBox.Height / 2)
-                InnerTextBox.Size = New Size(Width - Padding.Horizontal, Height - Padding.Vertical)
-                InnerTextBox.Location = New Point(MiddlePointX, MiddlePointY)
+                Dim FinalWidth As Integer = Me.Bounds.Width - Me.Padding.Horizontal
+                Dim FinalLocation As New Point(Padding.Left, (Me.Bounds.Height / 2) - (InnerTextBox.Height / 2))
+
+                If LeftImage IsNot Nothing Then
+                    FinalWidth -= LeftImageSize.Width
+                    FinalLocation.X += LeftImageSize.Width
+                End If
+                If RightImage IsNot Nothing Then
+                    FinalWidth -= RightImageSize.Width
+                End If
+                InnerTextBox.Width = FinalWidth
+                InnerTextBox.Location = FinalLocation
+                InnerTextBox.Invalidate()
+                Invalidate()
             Else
                 InnerTextBox.Dock = DockStyle.Fill
+                InnerTextBox.Invalidate()
+                Invalidate()
             End If
             MyBase.OnResize(e)
         End Sub
@@ -655,7 +733,8 @@ Namespace Src.Controls
                     G.FillPath(DisabledBackgroundBrush, InputBoxGraphicsPath)
                     If DisabledBorderPen.Width > 0 Then
                         If UnderlinedStyle Then
-                            G.DrawLine(DisabledBorderPen, New Point(InnerTextBox.Location.X, Height - 1), New Point(Width - Padding.Right, Height - 1))
+                            'Width - Padding.Right
+                            G.DrawLine(DisabledBorderPen, New Point(InnerTextBox.Location.X, Height - 1), New Point(InnerTextBox.Width, Height - 1))
                         Else
                             G.DrawPath(DisabledBorderPen, InputBoxGraphicsPath)
                         End If
@@ -670,7 +749,8 @@ Namespace Src.Controls
                             InnerTextBox.ForeColor = FocusedTextColor
                             If FocusedBorderPen.Width > 0 Then
                                 If UnderlinedStyle Then
-                                    G.DrawLine(FocusedBorderPen, New Point(InnerTextBox.Location.X, Height - 1), New Point(Width - Padding.Right, Height - 1))
+                                    'Width - Padding.Right
+                                    G.DrawLine(FocusedBorderPen, New Point(InnerTextBox.Location.X, Height - 1), New Point(InnerTextBox.Width, Height - 1))
                                 Else
                                     G.DrawPath(FocusedBorderPen, InputBoxGraphicsPath)
                                 End If
@@ -683,7 +763,8 @@ Namespace Src.Controls
                             InnerTextBox.ForeColor = HoverTextColor
                             If HoverBorderPen.Width > 0 Then
                                 If UnderlinedStyle Then
-                                    G.DrawLine(HoverBorderPen, New Point(InnerTextBox.Location.X, Height - 1), New Point(Width - Padding.Right, Height - 1))
+                                    'Width - Padding.Right
+                                    G.DrawLine(HoverBorderPen, New Point(InnerTextBox.Location.X, Height - 1), New Point(InnerTextBox.Width, Height - 1))
                                 Else
                                     G.DrawPath(HoverBorderPen, InputBoxGraphicsPath)
                                 End If
@@ -696,7 +777,8 @@ Namespace Src.Controls
                             InnerTextBox.ForeColor = TextColor
                             If DefaultBorderPen.Width > 0 Then
                                 If UnderlinedStyle Then
-                                    G.DrawLine(DefaultBorderPen, New Point(InnerTextBox.Location.X, Height - 1), New Point(Width - Padding.Right, Height - 1))
+                                    'Width - Padding.Right
+                                    G.DrawLine(DefaultBorderPen, New Point(InnerTextBox.Location.X, Height - 1), New Point(InnerTextBox.Width, Height - 1))
                                 Else
                                     G.DrawPath(DefaultBorderPen, InputBoxGraphicsPath)
                                 End If
@@ -735,16 +817,42 @@ Namespace Src.Controls
                             InnerTextBox.ForeColor = TextColor
                             If DefaultBorderPen.Width > 0 Then
                                 If UnderlinedStyle Then
-                                    G.DrawLine(DefaultBorderPen, New Point(InnerTextBox.Location.X, Height - 1), New Point(Width - Padding.Right, Height - 1))
+                                    G.DrawRectangle(DefaultBorderPen, InnerTextBox.Location.X, Height - 1, InnerTextBox.Width, DefaultBorderPen.Width)
                                 Else
                                     G.DrawPath(DefaultBorderPen, InputBoxGraphicsPath)
                                 End If
                             End If
                         End Using
                     End If
+                    If LeftImage IsNot Nothing AndAlso Not MultiLine Then
+                        G.DrawImage(LeftImage, LeftImageSize, StringAlignment.Near, LeftImageOffset, Rectangle.Round(InputBoxGraphicsPath.GetBounds()))
+                    End If
+                    If RightImage IsNot Nothing AndAlso Not MultiLine Then
+                        G.DrawImage(RightImage, RightImageSize, StringAlignment.Far, RightImageOffset, Rectangle.Round(InputBoxGraphicsPath.GetBounds()))
+                    End If
                 End If
             End If
             InputBoxGraphicsPath.Dispose()
+        End Sub
+        Protected Overrides Sub OnMouseEnter(e As EventArgs)
+            MouseCurrentState = MouseState.Hovered
+            If EnableAnimations AndAlso IsEnabled Then
+                HoverAnimationManager.StartNewAnimation(AnimationDirection.In)
+            End If
+            Invalidate()
+            MyBase.OnMouseEnter(e)
+        End Sub
+        Protected Overrides Sub OnMouseLeave(e As EventArgs)
+            MouseCurrentState = MouseState.Normal
+            If EnableAnimations AndAlso IsEnabled Then
+                HoverAnimationManager.StartNewAnimation(AnimationDirection.Out)
+            End If
+            Invalidate()
+            MyBase.OnMouseLeave(e)
+        End Sub
+        Protected Overrides Sub OnPaddingChanged(e As EventArgs)
+            OnResize(Nothing)
+            MyBase.OnPaddingChanged(e)
         End Sub
 #End Region
     End Class

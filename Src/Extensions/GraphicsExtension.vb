@@ -147,7 +147,7 @@ Namespace Src.Extensions
         Sub DrawImageWithColor(G As Graphics, BackgroundColor As Color, Img As Image, ImageSize As Size, ImageAlign As ContentAlignment, ImageOffset As Point, Bounds As Rectangle) 'HERE2
             Dim ImageLocation As Point = GraphicsHelper.GetImageAlignmentPoint(ImageAlign, Bounds.Size, ImageSize)
             Bounds.Offset(ImageLocation.X + ImageOffset.X, ImageLocation.Y + ImageOffset.Y)
-            G.DrawImageWithColor(New Rectangle(Bounds.Location, ImageSize), Img, BackgroundColor)
+            G.DrawImageWithColor(BackgroundColor, Img, New Rectangle(Bounds.Location, ImageSize))
         End Sub
         ''' <summary>
         ''' Draws an image with a given image alignment, image offset, and background color for the image.
@@ -163,17 +163,17 @@ Namespace Src.Extensions
         Sub DrawImageWithColor(G As Graphics, BackgroundColor As Color, Img As Image, ImageSize As Size, ImageAlign As StringAlignment, ImageOffset As Point, Bounds As Rectangle)
             Dim ImageLocation As Point = GraphicsHelper.GetImageAlignmentPoint(ImageAlign, Bounds.Size, ImageSize)
             Bounds.Offset(ImageLocation.X + ImageOffset.X, ImageLocation.Y + ImageOffset.Y)
-            G.DrawImageWithColor(New Rectangle(Bounds.Location, ImageSize), Img, BackgroundColor)
+            G.DrawImageWithColor(BackgroundColor, Img, New Rectangle(Bounds.Location, ImageSize))
         End Sub
         ''' <summary>
         ''' Draws an image with a background color.
         ''' </summary>
         ''' <param name="G"> The Graphic to draw the image </param>
-        ''' <param name="Bounds"> The Rectangle area of image </param>
-        ''' <param name="Img"> The image that the custom color applies on it</param>
         ''' <param name="BackgroundColor">The Color that be applied to the image </param>
+        ''' <param name="Img"> The image that the custom color applies on it</param>
+        ''' <param name="Bounds"> The Rectangle area of image </param>
         <Extension()>
-        Sub DrawImageWithColor(G As Graphics, Bounds As Rectangle, Img As Image, BackgroundColor As Color)
+        Sub DrawImageWithColor(G As Graphics, BackgroundColor As Color, Img As Image, Bounds As Rectangle)
             Dim PtsArray As Single()() =
             {
                 New Single() {Convert.ToSingle(BackgroundColor.R / 255), 0, 0, 0, 0},

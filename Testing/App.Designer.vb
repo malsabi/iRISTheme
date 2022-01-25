@@ -28,6 +28,15 @@ Partial Class App
         Me.IrisVerticalTabControl1 = New iRISTheme.Src.Controls.IRISVerticalTabControl()
         Me.UIHeaderabPage = New System.Windows.Forms.TabPage()
         Me.ButtonsTabPage = New System.Windows.Forms.TabPage()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.IrisButton30 = New iRISTheme.Src.Controls.IRISButton()
+        Me.IrisButton29 = New iRISTheme.Src.Controls.IRISButton()
+        Me.IrisButton28 = New iRISTheme.Src.Controls.IRISButton()
+        Me.IrisButton27 = New iRISTheme.Src.Controls.IRISButton()
+        Me.IrisButton26 = New iRISTheme.Src.Controls.IRISButton()
         Me.IrisButton25 = New iRISTheme.Src.Controls.IRISButton()
         Me.IrisButton24 = New iRISTheme.Src.Controls.IRISButton()
         Me.IrisButton23 = New iRISTheme.Src.Controls.IRISButton()
@@ -54,9 +63,8 @@ Partial Class App
         Me.IrisButton2 = New iRISTheme.Src.Controls.IRISButton()
         Me.IrisButton1 = New iRISTheme.Src.Controls.IRISButton()
         Me.InputTabPage = New System.Windows.Forms.TabPage()
-        Me.IrisInputBox2 = New iRISTheme.Src.Controls.IRISInputBox()
-        Me.InputBoxContextMenu = New iRISTheme.Src.Controls.IRISInputBoxContextMenuStrip()
         Me.IrisInputBox1 = New iRISTheme.Src.Controls.IRISInputBox()
+        Me.InputBoxContextMenu = New iRISTheme.Src.Controls.IRISInputBoxContextMenuStrip()
         Me.CheckBaseTabPage = New System.Windows.Forms.TabPage()
         Me.IrisCheckBox2 = New iRISTheme.Src.Controls.IRISCheckBox()
         Me.IrisCheckBox1 = New iRISTheme.Src.Controls.IRISCheckBox()
@@ -115,7 +123,7 @@ Partial Class App
         Me.IrisVerticalTabControl1.SelectedBorderWidth = 3
         Me.IrisVerticalTabControl1.SelectedIndex = 0
         Me.IrisVerticalTabControl1.SelectedTextColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.IrisVerticalTabControl1.Size = New System.Drawing.Size(1027, 527)
+        Me.IrisVerticalTabControl1.Size = New System.Drawing.Size(1041, 697)
         Me.IrisVerticalTabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
         Me.IrisVerticalTabControl1.SplitterColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(194, Byte), Integer))
         Me.IrisVerticalTabControl1.SplitterWidth = 1
@@ -130,7 +138,7 @@ Partial Class App
         '
         Me.UIHeaderabPage.Location = New System.Drawing.Point(224, 4)
         Me.UIHeaderabPage.Name = "UIHeaderabPage"
-        Me.UIHeaderabPage.Size = New System.Drawing.Size(799, 519)
+        Me.UIHeaderabPage.Size = New System.Drawing.Size(813, 689)
         Me.UIHeaderabPage.TabIndex = 1
         Me.UIHeaderabPage.Tag = "Header"
         Me.UIHeaderabPage.Text = "UI CONTROLS"
@@ -139,6 +147,15 @@ Partial Class App
         'ButtonsTabPage
         '
         Me.ButtonsTabPage.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(55, Byte), Integer), CType(CType(55, Byte), Integer))
+        Me.ButtonsTabPage.Controls.Add(Me.Label4)
+        Me.ButtonsTabPage.Controls.Add(Me.Label3)
+        Me.ButtonsTabPage.Controls.Add(Me.Label2)
+        Me.ButtonsTabPage.Controls.Add(Me.Label1)
+        Me.ButtonsTabPage.Controls.Add(Me.IrisButton30)
+        Me.ButtonsTabPage.Controls.Add(Me.IrisButton29)
+        Me.ButtonsTabPage.Controls.Add(Me.IrisButton28)
+        Me.ButtonsTabPage.Controls.Add(Me.IrisButton27)
+        Me.ButtonsTabPage.Controls.Add(Me.IrisButton26)
         Me.ButtonsTabPage.Controls.Add(Me.IrisButton25)
         Me.ButtonsTabPage.Controls.Add(Me.IrisButton24)
         Me.ButtonsTabPage.Controls.Add(Me.IrisButton23)
@@ -169,9 +186,208 @@ Partial Class App
         Me.ButtonsTabPage.Location = New System.Drawing.Point(224, 4)
         Me.ButtonsTabPage.Name = "ButtonsTabPage"
         Me.ButtonsTabPage.Padding = New System.Windows.Forms.Padding(3)
-        Me.ButtonsTabPage.Size = New System.Drawing.Size(799, 519)
+        Me.ButtonsTabPage.Size = New System.Drawing.Size(813, 689)
         Me.ButtonsTabPage.TabIndex = 0
         Me.ButtonsTabPage.Text = "BUTTONS"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI Semibold", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(11, 559)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(328, 25)
+        Me.Label4.TabIndex = 41
+        Me.Label4.Text = "FLOATING BUTTONS - WITH IMAGES"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(15, 366)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(462, 25)
+        Me.Label3.TabIndex = 40
+        Me.Label3.Text = "DESCRIPTIVE BUTTONS (ROUNDED) - WITH IMAGES"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(15, 195)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(468, 25)
+        Me.Label2.TabIndex = 39
+        Me.Label2.Text = "FILLED / LINED BUTTONS (NORMAL) - WITH IMAGES"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(15, 18)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(516, 25)
+        Me.Label1.TabIndex = 38
+        Me.Label1.Text = "FILLED / LINED BUTTONS (ROUNDED) - WITHOUT IMAGES"
+        '
+        'IrisButton30
+        '
+        Me.IrisButton30.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.IrisButton30.BorderColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(194, Byte), Integer))
+        Me.IrisButton30.BorderRadius = 75
+        Me.IrisButton30.BorderWidth = 0!
+        Me.IrisButton30.ClickColor = System.Drawing.Color.FromArgb(CType(CType(73, Byte), Integer), CType(CType(186, Byte), Integer), CType(CType(175, Byte), Integer))
+        Me.IrisButton30.ClickTextColor = System.Drawing.Color.Empty
+        Me.IrisButton30.Cursor = System.Windows.Forms.Cursors.Default
+        Me.IrisButton30.DisabledBackgroundColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.IrisButton30.DisabledBorderColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.IrisButton30.DisabledBorderWidth = 1
+        Me.IrisButton30.DisabledTextColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(105, Byte), Integer), CType(CType(105, Byte), Integer))
+        Me.IrisButton30.EnableAnimations = True
+        Me.IrisButton30.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!)
+        Me.IrisButton30.HoverColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.IrisButton30.HoverTextColor = System.Drawing.Color.White
+        Me.IrisButton30.Image = CType(resources.GetObject("IrisButton30.Image"), System.Drawing.Image)
+        Me.IrisButton30.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.IrisButton30.ImageOffset = New System.Drawing.Point(0, 0)
+        Me.IrisButton30.ImageSize = New System.Drawing.Size(55, 55)
+        Me.IrisButton30.IsEnabled = True
+        Me.IrisButton30.Location = New System.Drawing.Point(670, 596)
+        Me.IrisButton30.Name = "IrisButton30"
+        Me.IrisButton30.Size = New System.Drawing.Size(79, 71)
+        Me.IrisButton30.StretchImage = False
+        Me.IrisButton30.TabIndex = 37
+        Me.IrisButton30.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.IrisButton30.TextColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.IrisButton30.TextOffset = New System.Drawing.Point(0, 0)
+        '
+        'IrisButton29
+        '
+        Me.IrisButton29.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(90, Byte), Integer))
+        Me.IrisButton29.BorderColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(194, Byte), Integer))
+        Me.IrisButton29.BorderRadius = 75
+        Me.IrisButton29.BorderWidth = 0!
+        Me.IrisButton29.ClickColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(186, Byte), Integer), CType(CType(120, Byte), Integer))
+        Me.IrisButton29.ClickTextColor = System.Drawing.Color.Empty
+        Me.IrisButton29.Cursor = System.Windows.Forms.Cursors.Default
+        Me.IrisButton29.DisabledBackgroundColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.IrisButton29.DisabledBorderColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.IrisButton29.DisabledBorderWidth = 1
+        Me.IrisButton29.DisabledTextColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(105, Byte), Integer), CType(CType(105, Byte), Integer))
+        Me.IrisButton29.EnableAnimations = True
+        Me.IrisButton29.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!)
+        Me.IrisButton29.HoverColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.IrisButton29.HoverTextColor = System.Drawing.Color.White
+        Me.IrisButton29.Image = CType(resources.GetObject("IrisButton29.Image"), System.Drawing.Image)
+        Me.IrisButton29.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.IrisButton29.ImageOffset = New System.Drawing.Point(0, 0)
+        Me.IrisButton29.ImageSize = New System.Drawing.Size(55, 55)
+        Me.IrisButton29.IsEnabled = True
+        Me.IrisButton29.Location = New System.Drawing.Point(516, 596)
+        Me.IrisButton29.Name = "IrisButton29"
+        Me.IrisButton29.Size = New System.Drawing.Size(79, 71)
+        Me.IrisButton29.StretchImage = False
+        Me.IrisButton29.TabIndex = 36
+        Me.IrisButton29.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.IrisButton29.TextColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.IrisButton29.TextOffset = New System.Drawing.Point(0, 0)
+        '
+        'IrisButton28
+        '
+        Me.IrisButton28.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(142, Byte), Integer), CType(CType(11, Byte), Integer))
+        Me.IrisButton28.BorderColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(194, Byte), Integer))
+        Me.IrisButton28.BorderRadius = 75
+        Me.IrisButton28.BorderWidth = 0!
+        Me.IrisButton28.ClickColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(33, Byte), Integer))
+        Me.IrisButton28.ClickTextColor = System.Drawing.Color.Empty
+        Me.IrisButton28.Cursor = System.Windows.Forms.Cursors.Default
+        Me.IrisButton28.DisabledBackgroundColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.IrisButton28.DisabledBorderColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.IrisButton28.DisabledBorderWidth = 1
+        Me.IrisButton28.DisabledTextColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(105, Byte), Integer), CType(CType(105, Byte), Integer))
+        Me.IrisButton28.EnableAnimations = True
+        Me.IrisButton28.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!)
+        Me.IrisButton28.HoverColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.IrisButton28.HoverTextColor = System.Drawing.Color.White
+        Me.IrisButton28.Image = CType(resources.GetObject("IrisButton28.Image"), System.Drawing.Image)
+        Me.IrisButton28.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.IrisButton28.ImageOffset = New System.Drawing.Point(0, 0)
+        Me.IrisButton28.ImageSize = New System.Drawing.Size(55, 55)
+        Me.IrisButton28.IsEnabled = True
+        Me.IrisButton28.Location = New System.Drawing.Point(353, 596)
+        Me.IrisButton28.Name = "IrisButton28"
+        Me.IrisButton28.Size = New System.Drawing.Size(79, 71)
+        Me.IrisButton28.StretchImage = False
+        Me.IrisButton28.TabIndex = 35
+        Me.IrisButton28.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.IrisButton28.TextColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.IrisButton28.TextOffset = New System.Drawing.Point(0, 0)
+        '
+        'IrisButton27
+        '
+        Me.IrisButton27.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(190, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(62, Byte), Integer))
+        Me.IrisButton27.BorderColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(194, Byte), Integer))
+        Me.IrisButton27.BorderRadius = 75
+        Me.IrisButton27.BorderWidth = 0!
+        Me.IrisButton27.ClickColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(77, Byte), Integer), CType(CType(57, Byte), Integer))
+        Me.IrisButton27.ClickTextColor = System.Drawing.Color.Empty
+        Me.IrisButton27.Cursor = System.Windows.Forms.Cursors.Default
+        Me.IrisButton27.DisabledBackgroundColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.IrisButton27.DisabledBorderColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.IrisButton27.DisabledBorderWidth = 1
+        Me.IrisButton27.DisabledTextColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(105, Byte), Integer), CType(CType(105, Byte), Integer))
+        Me.IrisButton27.EnableAnimations = True
+        Me.IrisButton27.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!)
+        Me.IrisButton27.HoverColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.IrisButton27.HoverTextColor = System.Drawing.Color.White
+        Me.IrisButton27.Image = CType(resources.GetObject("IrisButton27.Image"), System.Drawing.Image)
+        Me.IrisButton27.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.IrisButton27.ImageOffset = New System.Drawing.Point(0, 0)
+        Me.IrisButton27.ImageSize = New System.Drawing.Size(55, 55)
+        Me.IrisButton27.IsEnabled = True
+        Me.IrisButton27.Location = New System.Drawing.Point(198, 596)
+        Me.IrisButton27.Name = "IrisButton27"
+        Me.IrisButton27.Size = New System.Drawing.Size(79, 71)
+        Me.IrisButton27.StretchImage = False
+        Me.IrisButton27.TabIndex = 34
+        Me.IrisButton27.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.IrisButton27.TextColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.IrisButton27.TextOffset = New System.Drawing.Point(0, 0)
+        '
+        'IrisButton26
+        '
+        Me.IrisButton26.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(194, Byte), Integer))
+        Me.IrisButton26.BorderColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(194, Byte), Integer))
+        Me.IrisButton26.BorderRadius = 75
+        Me.IrisButton26.BorderWidth = 0!
+        Me.IrisButton26.ClickColor = System.Drawing.Color.FromArgb(CType(CType(110, Byte), Integer), CType(CType(181, Byte), Integer), CType(CType(210, Byte), Integer))
+        Me.IrisButton26.ClickTextColor = System.Drawing.Color.Empty
+        Me.IrisButton26.Cursor = System.Windows.Forms.Cursors.Default
+        Me.IrisButton26.DisabledBackgroundColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.IrisButton26.DisabledBorderColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.IrisButton26.DisabledBorderWidth = 1
+        Me.IrisButton26.DisabledTextColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(105, Byte), Integer), CType(CType(105, Byte), Integer))
+        Me.IrisButton26.EnableAnimations = True
+        Me.IrisButton26.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!)
+        Me.IrisButton26.HoverColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.IrisButton26.HoverTextColor = System.Drawing.Color.White
+        Me.IrisButton26.Image = CType(resources.GetObject("IrisButton26.Image"), System.Drawing.Image)
+        Me.IrisButton26.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.IrisButton26.ImageOffset = New System.Drawing.Point(0, 0)
+        Me.IrisButton26.ImageSize = New System.Drawing.Size(55, 55)
+        Me.IrisButton26.IsEnabled = True
+        Me.IrisButton26.Location = New System.Drawing.Point(42, 596)
+        Me.IrisButton26.Name = "IrisButton26"
+        Me.IrisButton26.Size = New System.Drawing.Size(79, 71)
+        Me.IrisButton26.StretchImage = False
+        Me.IrisButton26.TabIndex = 33
+        Me.IrisButton26.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.IrisButton26.TextColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.IrisButton26.TextOffset = New System.Drawing.Point(0, 0)
         '
         'IrisButton25
         '
@@ -193,8 +409,9 @@ Partial Class App
         Me.IrisButton25.Image = CType(resources.GetObject("IrisButton25.Image"), System.Drawing.Image)
         Me.IrisButton25.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.IrisButton25.ImageOffset = New System.Drawing.Point(0, 0)
+        Me.IrisButton25.ImageSize = New System.Drawing.Size(80, 80)
         Me.IrisButton25.IsEnabled = True
-        Me.IrisButton25.Location = New System.Drawing.Point(644, 359)
+        Me.IrisButton25.Location = New System.Drawing.Point(644, 408)
         Me.IrisButton25.Name = "IrisButton25"
         Me.IrisButton25.Size = New System.Drawing.Size(140, 125)
         Me.IrisButton25.StretchImage = False
@@ -224,8 +441,9 @@ Partial Class App
         Me.IrisButton24.Image = CType(resources.GetObject("IrisButton24.Image"), System.Drawing.Image)
         Me.IrisButton24.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.IrisButton24.ImageOffset = New System.Drawing.Point(0, 0)
+        Me.IrisButton24.ImageSize = New System.Drawing.Size(80, 80)
         Me.IrisButton24.IsEnabled = True
-        Me.IrisButton24.Location = New System.Drawing.Point(484, 359)
+        Me.IrisButton24.Location = New System.Drawing.Point(484, 408)
         Me.IrisButton24.Name = "IrisButton24"
         Me.IrisButton24.Size = New System.Drawing.Size(140, 125)
         Me.IrisButton24.StretchImage = False
@@ -255,8 +473,9 @@ Partial Class App
         Me.IrisButton23.Image = CType(resources.GetObject("IrisButton23.Image"), System.Drawing.Image)
         Me.IrisButton23.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.IrisButton23.ImageOffset = New System.Drawing.Point(0, 0)
+        Me.IrisButton23.ImageSize = New System.Drawing.Size(80, 80)
         Me.IrisButton23.IsEnabled = True
-        Me.IrisButton23.Location = New System.Drawing.Point(327, 359)
+        Me.IrisButton23.Location = New System.Drawing.Point(327, 408)
         Me.IrisButton23.Name = "IrisButton23"
         Me.IrisButton23.Size = New System.Drawing.Size(140, 125)
         Me.IrisButton23.StretchImage = False
@@ -286,8 +505,9 @@ Partial Class App
         Me.IrisButton22.Image = CType(resources.GetObject("IrisButton22.Image"), System.Drawing.Image)
         Me.IrisButton22.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.IrisButton22.ImageOffset = New System.Drawing.Point(0, 0)
+        Me.IrisButton22.ImageSize = New System.Drawing.Size(80, 80)
         Me.IrisButton22.IsEnabled = True
-        Me.IrisButton22.Location = New System.Drawing.Point(171, 359)
+        Me.IrisButton22.Location = New System.Drawing.Point(171, 408)
         Me.IrisButton22.Name = "IrisButton22"
         Me.IrisButton22.Size = New System.Drawing.Size(140, 125)
         Me.IrisButton22.StretchImage = False
@@ -317,11 +537,12 @@ Partial Class App
         Me.IrisButton21.Image = CType(resources.GetObject("IrisButton21.Image"), System.Drawing.Image)
         Me.IrisButton21.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.IrisButton21.ImageOffset = New System.Drawing.Point(0, 0)
+        Me.IrisButton21.ImageSize = New System.Drawing.Size(80, 80)
         Me.IrisButton21.IsEnabled = True
-        Me.IrisButton21.Location = New System.Drawing.Point(16, 359)
+        Me.IrisButton21.Location = New System.Drawing.Point(16, 408)
         Me.IrisButton21.Name = "IrisButton21"
         Me.IrisButton21.Size = New System.Drawing.Size(140, 125)
-        Me.IrisButton21.StretchImage = True
+        Me.IrisButton21.StretchImage = False
         Me.IrisButton21.TabIndex = 28
         Me.IrisButton21.Text = "Play"
         Me.IrisButton21.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -332,7 +553,7 @@ Partial Class App
         '
         Me.IrisButton11.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.IrisButton11.BorderColor = System.Drawing.Color.FromArgb(CType(CType(190, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(62, Byte), Integer))
-        Me.IrisButton11.BorderRadius = 30
+        Me.IrisButton11.BorderRadius = 0
         Me.IrisButton11.BorderWidth = 1.0!
         Me.IrisButton11.ClickColor = System.Drawing.Color.FromArgb(CType(CType(210, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(82, Byte), Integer))
         Me.IrisButton11.ClickTextColor = System.Drawing.Color.Empty
@@ -348,8 +569,9 @@ Partial Class App
         Me.IrisButton11.Image = CType(resources.GetObject("IrisButton11.Image"), System.Drawing.Image)
         Me.IrisButton11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.IrisButton11.ImageOffset = New System.Drawing.Point(10, 0)
+        Me.IrisButton11.ImageSize = New System.Drawing.Size(19, 19)
         Me.IrisButton11.IsEnabled = True
-        Me.IrisButton11.Location = New System.Drawing.Point(644, 264)
+        Me.IrisButton11.Location = New System.Drawing.Point(644, 304)
         Me.IrisButton11.Name = "IrisButton11"
         Me.IrisButton11.Size = New System.Drawing.Size(140, 43)
         Me.IrisButton11.StretchImage = False
@@ -363,7 +585,7 @@ Partial Class App
         '
         Me.IrisButton12.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.IrisButton12.BorderColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(142, Byte), Integer), CType(CType(11, Byte), Integer))
-        Me.IrisButton12.BorderRadius = 30
+        Me.IrisButton12.BorderRadius = 0
         Me.IrisButton12.BorderWidth = 1.0!
         Me.IrisButton12.ClickColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(33, Byte), Integer))
         Me.IrisButton12.ClickTextColor = System.Drawing.Color.Empty
@@ -379,8 +601,9 @@ Partial Class App
         Me.IrisButton12.Image = CType(resources.GetObject("IrisButton12.Image"), System.Drawing.Image)
         Me.IrisButton12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.IrisButton12.ImageOffset = New System.Drawing.Point(10, 0)
+        Me.IrisButton12.ImageSize = New System.Drawing.Size(19, 19)
         Me.IrisButton12.IsEnabled = True
-        Me.IrisButton12.Location = New System.Drawing.Point(484, 264)
+        Me.IrisButton12.Location = New System.Drawing.Point(484, 304)
         Me.IrisButton12.Name = "IrisButton12"
         Me.IrisButton12.Size = New System.Drawing.Size(140, 43)
         Me.IrisButton12.StretchImage = False
@@ -394,7 +617,7 @@ Partial Class App
         '
         Me.IrisButton13.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.IrisButton13.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(90, Byte), Integer))
-        Me.IrisButton13.BorderRadius = 30
+        Me.IrisButton13.BorderRadius = 0
         Me.IrisButton13.BorderWidth = 1.0!
         Me.IrisButton13.ClickColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(186, Byte), Integer), CType(CType(120, Byte), Integer))
         Me.IrisButton13.ClickTextColor = System.Drawing.Color.Empty
@@ -410,8 +633,9 @@ Partial Class App
         Me.IrisButton13.Image = CType(resources.GetObject("IrisButton13.Image"), System.Drawing.Image)
         Me.IrisButton13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.IrisButton13.ImageOffset = New System.Drawing.Point(10, 0)
+        Me.IrisButton13.ImageSize = New System.Drawing.Size(19, 19)
         Me.IrisButton13.IsEnabled = True
-        Me.IrisButton13.Location = New System.Drawing.Point(327, 264)
+        Me.IrisButton13.Location = New System.Drawing.Point(327, 304)
         Me.IrisButton13.Name = "IrisButton13"
         Me.IrisButton13.Size = New System.Drawing.Size(140, 43)
         Me.IrisButton13.StretchImage = False
@@ -425,7 +649,7 @@ Partial Class App
         '
         Me.IrisButton14.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.IrisButton14.BorderColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.IrisButton14.BorderRadius = 30
+        Me.IrisButton14.BorderRadius = 0
         Me.IrisButton14.BorderWidth = 1.0!
         Me.IrisButton14.ClickColor = System.Drawing.Color.FromArgb(CType(CType(73, Byte), Integer), CType(CType(186, Byte), Integer), CType(CType(175, Byte), Integer))
         Me.IrisButton14.ClickTextColor = System.Drawing.Color.Empty
@@ -441,8 +665,9 @@ Partial Class App
         Me.IrisButton14.Image = CType(resources.GetObject("IrisButton14.Image"), System.Drawing.Image)
         Me.IrisButton14.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.IrisButton14.ImageOffset = New System.Drawing.Point(10, 0)
+        Me.IrisButton14.ImageSize = New System.Drawing.Size(19, 19)
         Me.IrisButton14.IsEnabled = True
-        Me.IrisButton14.Location = New System.Drawing.Point(171, 264)
+        Me.IrisButton14.Location = New System.Drawing.Point(171, 304)
         Me.IrisButton14.Name = "IrisButton14"
         Me.IrisButton14.Size = New System.Drawing.Size(140, 43)
         Me.IrisButton14.StretchImage = False
@@ -456,7 +681,7 @@ Partial Class App
         '
         Me.IrisButton15.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.IrisButton15.BorderColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(194, Byte), Integer))
-        Me.IrisButton15.BorderRadius = 30
+        Me.IrisButton15.BorderRadius = 0
         Me.IrisButton15.BorderWidth = 1.0!
         Me.IrisButton15.ClickColor = System.Drawing.Color.FromArgb(CType(CType(110, Byte), Integer), CType(CType(181, Byte), Integer), CType(CType(210, Byte), Integer))
         Me.IrisButton15.ClickTextColor = System.Drawing.Color.Empty
@@ -472,8 +697,9 @@ Partial Class App
         Me.IrisButton15.Image = CType(resources.GetObject("IrisButton15.Image"), System.Drawing.Image)
         Me.IrisButton15.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.IrisButton15.ImageOffset = New System.Drawing.Point(10, 0)
+        Me.IrisButton15.ImageSize = New System.Drawing.Size(19, 19)
         Me.IrisButton15.IsEnabled = True
-        Me.IrisButton15.Location = New System.Drawing.Point(16, 264)
+        Me.IrisButton15.Location = New System.Drawing.Point(16, 304)
         Me.IrisButton15.Name = "IrisButton15"
         Me.IrisButton15.Size = New System.Drawing.Size(140, 43)
         Me.IrisButton15.StretchImage = False
@@ -487,7 +713,7 @@ Partial Class App
         '
         Me.IrisButton16.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(190, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(62, Byte), Integer))
         Me.IrisButton16.BorderColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(194, Byte), Integer))
-        Me.IrisButton16.BorderRadius = 30
+        Me.IrisButton16.BorderRadius = 0
         Me.IrisButton16.BorderWidth = 0!
         Me.IrisButton16.ClickColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(77, Byte), Integer), CType(CType(57, Byte), Integer))
         Me.IrisButton16.ClickTextColor = System.Drawing.Color.Empty
@@ -503,8 +729,9 @@ Partial Class App
         Me.IrisButton16.Image = CType(resources.GetObject("IrisButton16.Image"), System.Drawing.Image)
         Me.IrisButton16.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.IrisButton16.ImageOffset = New System.Drawing.Point(10, 0)
+        Me.IrisButton16.ImageSize = New System.Drawing.Size(19, 19)
         Me.IrisButton16.IsEnabled = True
-        Me.IrisButton16.Location = New System.Drawing.Point(644, 195)
+        Me.IrisButton16.Location = New System.Drawing.Point(644, 235)
         Me.IrisButton16.Name = "IrisButton16"
         Me.IrisButton16.Size = New System.Drawing.Size(140, 43)
         Me.IrisButton16.StretchImage = False
@@ -518,7 +745,7 @@ Partial Class App
         '
         Me.IrisButton17.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(142, Byte), Integer), CType(CType(11, Byte), Integer))
         Me.IrisButton17.BorderColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(194, Byte), Integer))
-        Me.IrisButton17.BorderRadius = 30
+        Me.IrisButton17.BorderRadius = 0
         Me.IrisButton17.BorderWidth = 0!
         Me.IrisButton17.ClickColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(33, Byte), Integer))
         Me.IrisButton17.ClickTextColor = System.Drawing.Color.Empty
@@ -534,8 +761,9 @@ Partial Class App
         Me.IrisButton17.Image = CType(resources.GetObject("IrisButton17.Image"), System.Drawing.Image)
         Me.IrisButton17.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.IrisButton17.ImageOffset = New System.Drawing.Point(10, 0)
+        Me.IrisButton17.ImageSize = New System.Drawing.Size(19, 19)
         Me.IrisButton17.IsEnabled = True
-        Me.IrisButton17.Location = New System.Drawing.Point(484, 195)
+        Me.IrisButton17.Location = New System.Drawing.Point(484, 235)
         Me.IrisButton17.Name = "IrisButton17"
         Me.IrisButton17.Size = New System.Drawing.Size(140, 43)
         Me.IrisButton17.StretchImage = False
@@ -549,7 +777,7 @@ Partial Class App
         '
         Me.IrisButton18.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(90, Byte), Integer))
         Me.IrisButton18.BorderColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(194, Byte), Integer))
-        Me.IrisButton18.BorderRadius = 30
+        Me.IrisButton18.BorderRadius = 0
         Me.IrisButton18.BorderWidth = 0!
         Me.IrisButton18.ClickColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(186, Byte), Integer), CType(CType(120, Byte), Integer))
         Me.IrisButton18.ClickTextColor = System.Drawing.Color.Empty
@@ -565,8 +793,9 @@ Partial Class App
         Me.IrisButton18.Image = CType(resources.GetObject("IrisButton18.Image"), System.Drawing.Image)
         Me.IrisButton18.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.IrisButton18.ImageOffset = New System.Drawing.Point(10, 0)
+        Me.IrisButton18.ImageSize = New System.Drawing.Size(19, 19)
         Me.IrisButton18.IsEnabled = True
-        Me.IrisButton18.Location = New System.Drawing.Point(327, 195)
+        Me.IrisButton18.Location = New System.Drawing.Point(327, 235)
         Me.IrisButton18.Name = "IrisButton18"
         Me.IrisButton18.Size = New System.Drawing.Size(140, 43)
         Me.IrisButton18.StretchImage = False
@@ -580,7 +809,7 @@ Partial Class App
         '
         Me.IrisButton19.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.IrisButton19.BorderColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(194, Byte), Integer))
-        Me.IrisButton19.BorderRadius = 30
+        Me.IrisButton19.BorderRadius = 0
         Me.IrisButton19.BorderWidth = 0!
         Me.IrisButton19.ClickColor = System.Drawing.Color.FromArgb(CType(CType(73, Byte), Integer), CType(CType(186, Byte), Integer), CType(CType(175, Byte), Integer))
         Me.IrisButton19.ClickTextColor = System.Drawing.Color.Empty
@@ -596,8 +825,9 @@ Partial Class App
         Me.IrisButton19.Image = CType(resources.GetObject("IrisButton19.Image"), System.Drawing.Image)
         Me.IrisButton19.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.IrisButton19.ImageOffset = New System.Drawing.Point(10, 0)
+        Me.IrisButton19.ImageSize = New System.Drawing.Size(19, 19)
         Me.IrisButton19.IsEnabled = True
-        Me.IrisButton19.Location = New System.Drawing.Point(171, 195)
+        Me.IrisButton19.Location = New System.Drawing.Point(171, 235)
         Me.IrisButton19.Name = "IrisButton19"
         Me.IrisButton19.Size = New System.Drawing.Size(140, 43)
         Me.IrisButton19.StretchImage = False
@@ -611,7 +841,7 @@ Partial Class App
         '
         Me.IrisButton20.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(194, Byte), Integer))
         Me.IrisButton20.BorderColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(194, Byte), Integer))
-        Me.IrisButton20.BorderRadius = 30
+        Me.IrisButton20.BorderRadius = 0
         Me.IrisButton20.BorderWidth = 0!
         Me.IrisButton20.ClickColor = System.Drawing.Color.FromArgb(CType(CType(110, Byte), Integer), CType(CType(181, Byte), Integer), CType(CType(210, Byte), Integer))
         Me.IrisButton20.ClickTextColor = System.Drawing.Color.Empty
@@ -627,8 +857,9 @@ Partial Class App
         Me.IrisButton20.Image = CType(resources.GetObject("IrisButton20.Image"), System.Drawing.Image)
         Me.IrisButton20.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.IrisButton20.ImageOffset = New System.Drawing.Point(10, 0)
+        Me.IrisButton20.ImageSize = New System.Drawing.Size(19, 19)
         Me.IrisButton20.IsEnabled = True
-        Me.IrisButton20.Location = New System.Drawing.Point(16, 195)
+        Me.IrisButton20.Location = New System.Drawing.Point(16, 235)
         Me.IrisButton20.Name = "IrisButton20"
         Me.IrisButton20.Size = New System.Drawing.Size(140, 43)
         Me.IrisButton20.StretchImage = False
@@ -658,8 +889,9 @@ Partial Class App
         Me.IrisButton6.Image = Nothing
         Me.IrisButton6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.IrisButton6.ImageOffset = New System.Drawing.Point(0, 0)
+        Me.IrisButton6.ImageSize = New System.Drawing.Size(16, 16)
         Me.IrisButton6.IsEnabled = True
-        Me.IrisButton6.Location = New System.Drawing.Point(644, 100)
+        Me.IrisButton6.Location = New System.Drawing.Point(644, 126)
         Me.IrisButton6.Name = "IrisButton6"
         Me.IrisButton6.Size = New System.Drawing.Size(140, 43)
         Me.IrisButton6.StretchImage = False
@@ -689,8 +921,9 @@ Partial Class App
         Me.IrisButton7.Image = Nothing
         Me.IrisButton7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.IrisButton7.ImageOffset = New System.Drawing.Point(0, 0)
+        Me.IrisButton7.ImageSize = New System.Drawing.Size(16, 16)
         Me.IrisButton7.IsEnabled = True
-        Me.IrisButton7.Location = New System.Drawing.Point(484, 100)
+        Me.IrisButton7.Location = New System.Drawing.Point(484, 126)
         Me.IrisButton7.Name = "IrisButton7"
         Me.IrisButton7.Size = New System.Drawing.Size(140, 43)
         Me.IrisButton7.StretchImage = False
@@ -720,8 +953,9 @@ Partial Class App
         Me.IrisButton8.Image = Nothing
         Me.IrisButton8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.IrisButton8.ImageOffset = New System.Drawing.Point(0, 0)
+        Me.IrisButton8.ImageSize = New System.Drawing.Size(16, 16)
         Me.IrisButton8.IsEnabled = True
-        Me.IrisButton8.Location = New System.Drawing.Point(327, 100)
+        Me.IrisButton8.Location = New System.Drawing.Point(327, 126)
         Me.IrisButton8.Name = "IrisButton8"
         Me.IrisButton8.Size = New System.Drawing.Size(140, 43)
         Me.IrisButton8.StretchImage = False
@@ -751,8 +985,9 @@ Partial Class App
         Me.IrisButton9.Image = Nothing
         Me.IrisButton9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.IrisButton9.ImageOffset = New System.Drawing.Point(0, 0)
+        Me.IrisButton9.ImageSize = New System.Drawing.Size(16, 16)
         Me.IrisButton9.IsEnabled = True
-        Me.IrisButton9.Location = New System.Drawing.Point(171, 100)
+        Me.IrisButton9.Location = New System.Drawing.Point(171, 126)
         Me.IrisButton9.Name = "IrisButton9"
         Me.IrisButton9.Size = New System.Drawing.Size(140, 43)
         Me.IrisButton9.StretchImage = False
@@ -782,8 +1017,9 @@ Partial Class App
         Me.IrisButton10.Image = Nothing
         Me.IrisButton10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.IrisButton10.ImageOffset = New System.Drawing.Point(0, 0)
+        Me.IrisButton10.ImageSize = New System.Drawing.Size(16, 16)
         Me.IrisButton10.IsEnabled = True
-        Me.IrisButton10.Location = New System.Drawing.Point(16, 100)
+        Me.IrisButton10.Location = New System.Drawing.Point(16, 126)
         Me.IrisButton10.Name = "IrisButton10"
         Me.IrisButton10.Size = New System.Drawing.Size(140, 43)
         Me.IrisButton10.StretchImage = False
@@ -813,8 +1049,9 @@ Partial Class App
         Me.IrisButton5.Image = Nothing
         Me.IrisButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.IrisButton5.ImageOffset = New System.Drawing.Point(0, 0)
+        Me.IrisButton5.ImageSize = New System.Drawing.Size(16, 16)
         Me.IrisButton5.IsEnabled = True
-        Me.IrisButton5.Location = New System.Drawing.Point(644, 31)
+        Me.IrisButton5.Location = New System.Drawing.Point(644, 57)
         Me.IrisButton5.Name = "IrisButton5"
         Me.IrisButton5.Size = New System.Drawing.Size(140, 43)
         Me.IrisButton5.StretchImage = False
@@ -844,8 +1081,9 @@ Partial Class App
         Me.IrisButton4.Image = Nothing
         Me.IrisButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.IrisButton4.ImageOffset = New System.Drawing.Point(0, 0)
+        Me.IrisButton4.ImageSize = New System.Drawing.Size(16, 16)
         Me.IrisButton4.IsEnabled = True
-        Me.IrisButton4.Location = New System.Drawing.Point(484, 31)
+        Me.IrisButton4.Location = New System.Drawing.Point(484, 57)
         Me.IrisButton4.Name = "IrisButton4"
         Me.IrisButton4.Size = New System.Drawing.Size(140, 43)
         Me.IrisButton4.StretchImage = False
@@ -875,8 +1113,9 @@ Partial Class App
         Me.IrisButton3.Image = Nothing
         Me.IrisButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.IrisButton3.ImageOffset = New System.Drawing.Point(0, 0)
+        Me.IrisButton3.ImageSize = New System.Drawing.Size(16, 16)
         Me.IrisButton3.IsEnabled = True
-        Me.IrisButton3.Location = New System.Drawing.Point(327, 31)
+        Me.IrisButton3.Location = New System.Drawing.Point(327, 57)
         Me.IrisButton3.Name = "IrisButton3"
         Me.IrisButton3.Size = New System.Drawing.Size(140, 43)
         Me.IrisButton3.StretchImage = False
@@ -906,8 +1145,9 @@ Partial Class App
         Me.IrisButton2.Image = Nothing
         Me.IrisButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.IrisButton2.ImageOffset = New System.Drawing.Point(0, 0)
+        Me.IrisButton2.ImageSize = New System.Drawing.Size(16, 16)
         Me.IrisButton2.IsEnabled = True
-        Me.IrisButton2.Location = New System.Drawing.Point(171, 31)
+        Me.IrisButton2.Location = New System.Drawing.Point(171, 57)
         Me.IrisButton2.Name = "IrisButton2"
         Me.IrisButton2.Size = New System.Drawing.Size(140, 43)
         Me.IrisButton2.StretchImage = False
@@ -937,8 +1177,9 @@ Partial Class App
         Me.IrisButton1.Image = Nothing
         Me.IrisButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.IrisButton1.ImageOffset = New System.Drawing.Point(0, 0)
+        Me.IrisButton1.ImageSize = New System.Drawing.Size(16, 16)
         Me.IrisButton1.IsEnabled = True
-        Me.IrisButton1.Location = New System.Drawing.Point(16, 31)
+        Me.IrisButton1.Location = New System.Drawing.Point(16, 57)
         Me.IrisButton1.Name = "IrisButton1"
         Me.IrisButton1.Size = New System.Drawing.Size(140, 43)
         Me.IrisButton1.StretchImage = False
@@ -951,55 +1192,61 @@ Partial Class App
         'InputTabPage
         '
         Me.InputTabPage.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(55, Byte), Integer), CType(CType(55, Byte), Integer))
-        Me.InputTabPage.Controls.Add(Me.IrisInputBox2)
         Me.InputTabPage.Controls.Add(Me.IrisInputBox1)
         Me.InputTabPage.Cursor = System.Windows.Forms.Cursors.Default
         Me.InputTabPage.ImageIndex = 0
         Me.InputTabPage.Location = New System.Drawing.Point(224, 4)
         Me.InputTabPage.Name = "InputTabPage"
         Me.InputTabPage.Padding = New System.Windows.Forms.Padding(3)
-        Me.InputTabPage.Size = New System.Drawing.Size(799, 519)
+        Me.InputTabPage.Size = New System.Drawing.Size(813, 689)
         Me.InputTabPage.TabIndex = 2
         Me.InputTabPage.Text = "INPUTS"
         '
-        'IrisInputBox2
+        'IrisInputBox1
         '
-        Me.IrisInputBox2.BorderRadius = 0
-        Me.IrisInputBox2.ContextMenuStrip = Me.InputBoxContextMenu
-        Me.IrisInputBox2.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.IrisInputBox2.DefaultBackgroundColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.IrisInputBox2.DefaultBorderColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(194, Byte), Integer))
-        Me.IrisInputBox2.DefaultBorderWidth = 1.0!
-        Me.IrisInputBox2.DisabledBackgroundColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.IrisInputBox2.DisabledBorderColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.IrisInputBox2.DisabledBorderWidth = 1
-        Me.IrisInputBox2.DisabledTextColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(105, Byte), Integer), CType(CType(105, Byte), Integer))
-        Me.IrisInputBox2.EnableAnimations = True
-        Me.IrisInputBox2.FocusedBackgroundColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.IrisInputBox2.FocusedBorderColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(194, Byte), Integer))
-        Me.IrisInputBox2.FocusedBorderWidth = 1
-        Me.IrisInputBox2.FocusedTextColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.IrisInputBox2.Font = New System.Drawing.Font("Verdana", 10.0!)
-        Me.IrisInputBox2.HoverBackgroundColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.IrisInputBox2.HoverBorderColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(194, Byte), Integer))
-        Me.IrisInputBox2.HoverBorderWidth = 1
-        Me.IrisInputBox2.HoverTextColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.IrisInputBox2.IsEnabled = True
-        Me.IrisInputBox2.Location = New System.Drawing.Point(25, 88)
-        Me.IrisInputBox2.MultiLine = False
-        Me.IrisInputBox2.Name = "IrisInputBox2"
-        Me.IrisInputBox2.Padding = New System.Windows.Forms.Padding(10, 5, 10, 5)
-        Me.IrisInputBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.IrisInputBox2.PlaceHolderText = "Enter your password"
-        Me.IrisInputBox2.PlaceHolderTextColor = System.Drawing.Color.Gray
-        Me.IrisInputBox2.SelectedText = ""
-        Me.IrisInputBox2.Size = New System.Drawing.Size(504, 40)
-        Me.IrisInputBox2.TabIndex = 9
-        Me.IrisInputBox2.TabStop = False
-        Me.IrisInputBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.IrisInputBox2.TextColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.IrisInputBox2.UnderlinedStyle = True
-        Me.IrisInputBox2.UseSystemPasswordChar = False
+        Me.IrisInputBox1.BorderRadius = 30
+        Me.IrisInputBox1.ContextMenuStrip = Me.InputBoxContextMenu
+        Me.IrisInputBox1.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.IrisInputBox1.DefaultBackgroundColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.IrisInputBox1.DefaultBorderColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(194, Byte), Integer))
+        Me.IrisInputBox1.DefaultBorderWidth = 1.0!
+        Me.IrisInputBox1.DisabledBackgroundColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.IrisInputBox1.DisabledBorderColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.IrisInputBox1.DisabledBorderWidth = 1
+        Me.IrisInputBox1.DisabledTextColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(105, Byte), Integer), CType(CType(105, Byte), Integer))
+        Me.IrisInputBox1.EnableAnimations = True
+        Me.IrisInputBox1.FocusedBackgroundColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.IrisInputBox1.FocusedBorderColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(194, Byte), Integer))
+        Me.IrisInputBox1.FocusedBorderWidth = 1
+        Me.IrisInputBox1.FocusedTextColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.IrisInputBox1.Font = New System.Drawing.Font("Verdana", 10.0!)
+        Me.IrisInputBox1.HoverBackgroundColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.IrisInputBox1.HoverBorderColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(194, Byte), Integer))
+        Me.IrisInputBox1.HoverBorderWidth = 1
+        Me.IrisInputBox1.HoverTextColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.IrisInputBox1.IsEnabled = True
+        Me.IrisInputBox1.LeftImage = CType(resources.GetObject("IrisInputBox1.LeftImage"), System.Drawing.Image)
+        Me.IrisInputBox1.LeftImageOffset = New System.Drawing.Point(5, 0)
+        Me.IrisInputBox1.LeftImageSize = New System.Drawing.Size(16, 16)
+        Me.IrisInputBox1.Location = New System.Drawing.Point(31, 51)
+        Me.IrisInputBox1.MultiLine = False
+        Me.IrisInputBox1.Name = "IrisInputBox1"
+        Me.IrisInputBox1.Padding = New System.Windows.Forms.Padding(10, 0, 10, 0)
+        Me.IrisInputBox1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.IrisInputBox1.PlaceHolderText = "Enter Text"
+        Me.IrisInputBox1.PlaceHolderTextColor = System.Drawing.SystemColors.InactiveCaption
+        Me.IrisInputBox1.RightImage = Nothing
+        Me.IrisInputBox1.RightImageOffset = New System.Drawing.Point(0, 0)
+        Me.IrisInputBox1.RightImageSize = New System.Drawing.Size(16, 16)
+        Me.IrisInputBox1.SelectedText = ""
+        Me.IrisInputBox1.Size = New System.Drawing.Size(399, 48)
+        Me.IrisInputBox1.TabIndex = 0
+        Me.IrisInputBox1.TabStop = False
+        Me.IrisInputBox1.Text = "IrisInputBox1"
+        Me.IrisInputBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.IrisInputBox1.TextColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.IrisInputBox1.UnderlinedStyle = True
+        Me.IrisInputBox1.UseSystemPasswordChar = False
         '
         'InputBoxContextMenu
         '
@@ -1024,45 +1271,6 @@ Partial Class App
         Me.InputBoxContextMenu.ShowImageMargin = False
         Me.InputBoxContextMenu.Size = New System.Drawing.Size(191, 172)
         '
-        'IrisInputBox1
-        '
-        Me.IrisInputBox1.BorderRadius = 0
-        Me.IrisInputBox1.ContextMenuStrip = Me.InputBoxContextMenu
-        Me.IrisInputBox1.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.IrisInputBox1.DefaultBackgroundColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.IrisInputBox1.DefaultBorderColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(194, Byte), Integer))
-        Me.IrisInputBox1.DefaultBorderWidth = 1.0!
-        Me.IrisInputBox1.DisabledBackgroundColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.IrisInputBox1.DisabledBorderColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.IrisInputBox1.DisabledBorderWidth = 1
-        Me.IrisInputBox1.DisabledTextColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(105, Byte), Integer), CType(CType(105, Byte), Integer))
-        Me.IrisInputBox1.EnableAnimations = True
-        Me.IrisInputBox1.FocusedBackgroundColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.IrisInputBox1.FocusedBorderColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(194, Byte), Integer))
-        Me.IrisInputBox1.FocusedBorderWidth = 1
-        Me.IrisInputBox1.FocusedTextColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.IrisInputBox1.Font = New System.Drawing.Font("Verdana", 10.0!)
-        Me.IrisInputBox1.HoverBackgroundColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.IrisInputBox1.HoverBorderColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(194, Byte), Integer))
-        Me.IrisInputBox1.HoverBorderWidth = 1
-        Me.IrisInputBox1.HoverTextColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.IrisInputBox1.IsEnabled = True
-        Me.IrisInputBox1.Location = New System.Drawing.Point(25, 20)
-        Me.IrisInputBox1.MultiLine = False
-        Me.IrisInputBox1.Name = "IrisInputBox1"
-        Me.IrisInputBox1.Padding = New System.Windows.Forms.Padding(10, 5, 10, 5)
-        Me.IrisInputBox1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.IrisInputBox1.PlaceHolderText = "Enter your email or username"
-        Me.IrisInputBox1.PlaceHolderTextColor = System.Drawing.Color.Gray
-        Me.IrisInputBox1.SelectedText = ""
-        Me.IrisInputBox1.Size = New System.Drawing.Size(504, 40)
-        Me.IrisInputBox1.TabIndex = 8
-        Me.IrisInputBox1.TabStop = False
-        Me.IrisInputBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.IrisInputBox1.TextColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.IrisInputBox1.UnderlinedStyle = True
-        Me.IrisInputBox1.UseSystemPasswordChar = False
-        '
         'CheckBaseTabPage
         '
         Me.CheckBaseTabPage.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(55, Byte), Integer), CType(CType(55, Byte), Integer))
@@ -1072,7 +1280,7 @@ Partial Class App
         Me.CheckBaseTabPage.ImageIndex = 0
         Me.CheckBaseTabPage.Location = New System.Drawing.Point(224, 4)
         Me.CheckBaseTabPage.Name = "CheckBaseTabPage"
-        Me.CheckBaseTabPage.Size = New System.Drawing.Size(799, 519)
+        Me.CheckBaseTabPage.Size = New System.Drawing.Size(813, 689)
         Me.CheckBaseTabPage.TabIndex = 3
         Me.CheckBaseTabPage.Text = "CHECKBASES"
         '
@@ -1142,7 +1350,7 @@ Partial Class App
         '
         Me.SplitterTabPage.Location = New System.Drawing.Point(224, 4)
         Me.SplitterTabPage.Name = "SplitterTabPage"
-        Me.SplitterTabPage.Size = New System.Drawing.Size(799, 519)
+        Me.SplitterTabPage.Size = New System.Drawing.Size(813, 689)
         Me.SplitterTabPage.TabIndex = 4
         Me.SplitterTabPage.Tag = "Splitter"
         Me.SplitterTabPage.UseVisualStyleBackColor = True
@@ -1151,7 +1359,7 @@ Partial Class App
         '
         Me.ComHeaderTabPage.Location = New System.Drawing.Point(224, 4)
         Me.ComHeaderTabPage.Name = "ComHeaderTabPage"
-        Me.ComHeaderTabPage.Size = New System.Drawing.Size(799, 519)
+        Me.ComHeaderTabPage.Size = New System.Drawing.Size(813, 689)
         Me.ComHeaderTabPage.TabIndex = 5
         Me.ComHeaderTabPage.Tag = "Header"
         Me.ComHeaderTabPage.Text = "UI COMPONENTS"
@@ -1159,24 +1367,26 @@ Partial Class App
         '
         'ThemeManagerTabPage
         '
+        Me.ThemeManagerTabPage.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(55, Byte), Integer), CType(CType(55, Byte), Integer))
+        Me.ThemeManagerTabPage.ImageIndex = 0
         Me.ThemeManagerTabPage.Location = New System.Drawing.Point(224, 4)
         Me.ThemeManagerTabPage.Name = "ThemeManagerTabPage"
-        Me.ThemeManagerTabPage.Size = New System.Drawing.Size(799, 519)
+        Me.ThemeManagerTabPage.Size = New System.Drawing.Size(813, 689)
         Me.ThemeManagerTabPage.TabIndex = 6
         Me.ThemeManagerTabPage.Text = "Theme Manager"
-        Me.ThemeManagerTabPage.UseVisualStyleBackColor = True
         '
         'App
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1027, 527)
+        Me.ClientSize = New System.Drawing.Size(1041, 697)
         Me.Controls.Add(Me.IrisVerticalTabControl1)
         Me.Name = "App"
         Me.Text = "IRIS Theme Test Application"
         Me.IrisVerticalTabControl1.ResumeLayout(False)
         Me.ButtonsTabPage.ResumeLayout(False)
+        Me.ButtonsTabPage.PerformLayout()
         Me.InputTabPage.ResumeLayout(False)
         Me.CheckBaseTabPage.ResumeLayout(False)
         Me.CheckBaseTabPage.PerformLayout()
@@ -1190,8 +1400,6 @@ Partial Class App
     Friend WithEvents UIHeaderabPage As TabPage
     Friend WithEvents InputTabPage As TabPage
     Friend WithEvents TabControlImageList As ImageList
-    Friend WithEvents IrisInputBox2 As Src.Controls.IRISInputBox
-    Friend WithEvents IrisInputBox1 As Src.Controls.IRISInputBox
     Friend WithEvents CheckBaseTabPage As TabPage
     Friend WithEvents IrisCheckBox2 As Src.Controls.IRISCheckBox
     Friend WithEvents IrisCheckBox1 As Src.Controls.IRISCheckBox
@@ -1222,4 +1430,14 @@ Partial Class App
     Friend WithEvents SplitterTabPage As TabPage
     Friend WithEvents ComHeaderTabPage As TabPage
     Friend WithEvents ThemeManagerTabPage As TabPage
+    Friend WithEvents IrisButton26 As Src.Controls.IRISButton
+    Friend WithEvents IrisButton30 As Src.Controls.IRISButton
+    Friend WithEvents IrisButton29 As Src.Controls.IRISButton
+    Friend WithEvents IrisButton28 As Src.Controls.IRISButton
+    Friend WithEvents IrisButton27 As Src.Controls.IRISButton
+    Friend WithEvents IrisInputBox1 As Src.Controls.IRISInputBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label3 As Label
 End Class

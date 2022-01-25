@@ -25,6 +25,7 @@ Namespace Src.Controls
         Private _IsEnabled As Boolean
         Private _Image As Image
         Private _ImageAlign As ContentAlignment
+        Private _ImageSize As Size
         Private _StretchImage As Boolean
         Private _ImageOffset As Point
         Private _BackgroundColor As Color
@@ -155,6 +156,16 @@ Namespace Src.Controls
             End Get
             Set(value As ContentAlignment)
                 _ImageAlign = value
+                Invalidate()
+            End Set
+        End Property
+        <Category("IRIS Theme"), Description("Gets or sets the Image Size of the IRISButton.")>
+        Public Property ImageSize As Size
+            Get
+                Return _ImageSize
+            End Get
+            Set(value As Size)
+                _ImageSize = value
                 Invalidate()
             End Set
         End Property
@@ -303,6 +314,8 @@ Namespace Src.Controls
             Font = FontUtilities.SemiBold(10)
             TextAlign = ContentAlignment.MiddleCenter
             ImageAlign = ContentAlignment.MiddleLeft
+            ImageSize = New Size(16, 16)
+            StretchImage = False
             TextColor = New DarkButtonStyle().OnNormalColor
             BorderColor = New DarkButtonStyle().NormalBorderColor
             BorderRadius = 30
@@ -442,7 +455,7 @@ Namespace Src.Controls
                         If StretchImage Then
                             G.DrawImage(Image, Rectangle.Round(ButtonGraphicsPath.GetBounds()))
                         Else
-                            G.DrawImage(Image, Image.Size, ImageAlign, ImageOffset, Rectangle.Round(ButtonGraphicsPath.GetBounds()))
+                            G.DrawImage(Image, ImageSize, ImageAlign, ImageOffset, Rectangle.Round(ButtonGraphicsPath.GetBounds()))
                         End If
                     End If
                 End Using
@@ -460,9 +473,9 @@ Namespace Src.Controls
                 'Draws the image. TODO:: Enable to draw an image with a specific color.
                 If Image IsNot Nothing Then
                     If StretchImage Then
-                        G.DrawImageWithColor(Rectangle.Round(ButtonGraphicsPath.GetBounds()), Image, DisabledBorderColor)
+                        G.DrawImageWithColor(DisabledBorderColor, Image, Rectangle.Round(ButtonGraphicsPath.GetBounds()))
                     Else
-                        G.DrawImageWithColor(DisabledBackgroundColor, Image, Image.Size, ImageAlign, ImageOffset, Rectangle.Round(ButtonGraphicsPath.GetBounds()))
+                        G.DrawImageWithColor(DisabledBackgroundColor, Image, ImageSize, ImageAlign, ImageOffset, Rectangle.Round(ButtonGraphicsPath.GetBounds()))
                     End If
                 End If
             End If
